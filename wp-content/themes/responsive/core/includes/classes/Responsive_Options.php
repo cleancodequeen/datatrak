@@ -35,7 +35,7 @@ Class Responsive_Options {
 		$this->options            = $options;
 		$this->responsive_options = get_option( 'responsive_theme_options' );
 		// Set confirmaton text for restore default option as attributes of submit_button().
-		$this->attributes['onclick'] = 'return confirm("' . __( 'Do you want to restore? \nAll theme settings will be lost! \nClick OK to Restore.', 'responsive' ) . '")';
+		$this->attributes['onclick'] = 'return confirm("' . __( 'Do you want to restore?', 'responsive' ) . '\n' . __( 'All theme settings will be lost!', 'responsive' ) . '\n' . __( 'Click OK to Restore.', 'responsive' ) . '")';
 	}
 
 	/**
@@ -313,7 +313,7 @@ Class Responsive_Options {
 
 		$html = '<div class="tinymce-editor">';
 		ob_start();
-		$html .= wp_editor( $value, 'responsive_theme_options[' . $id . ']', $editor_settings );
+		$html .= wp_editor( $value, 'responsive_theme_options_' . $id . '_', $editor_settings );
 		$html .= ob_get_contents();
 		$html .= '<label class="description" for="' . esc_attr( 'responsive_theme_options[' . $id . ']' ) . '">' . esc_html( $description ) . '</label>';
 		$html .= '</div>';
