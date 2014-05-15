@@ -1,0 +1,27 @@
+@import "compass";
+@import "compass/css3";
+
+$base-bg: #eeeeee;
+
+// **************************************************
+//
+// default styles for all media
+//
+// **************************************************
+
+html, body {
+	background-color: $base-bg;
+}
+
+#container {
+}
+
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#test {
+	font-family: "BodyCopy";
+}

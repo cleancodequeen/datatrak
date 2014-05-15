@@ -1,0 +1,240 @@
+@import "compass";
+@import "compass/css3";
+
+$search-bg: #eeeeee;
+$header-bg: #ffffff;
+$slogan-color: #1D2875;
+$nav-text-color: #365064;
+$nav-hover-color: #d22448;
+$nav-text-hover: #ffffff;
+
+#header {
+	background-color: $header-bg;
+	padding-top: 42px;
+
+	#slogan {
+		color: $slogan-color;
+		font-family: "BoldCopy";
+	}
+
+	#logo {
+		
+		@include background-image(image-url("datatrak-logo.svg"));
+		@include background-size(cover);
+
+		background: {
+  			repeat: no-repeat;
+  		};
+	}
+
+	#contact-btn {
+		
+		a,  a:hover,  a:active,  a:link,  a:visited {
+			color: #ffffff;
+			font-family: "BodyCopy";
+			text-decoration: none;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+		div {
+			@include background-image(image-url("contact-btn.png"));
+			@include background-size(cover);
+
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	#searchform {
+
+		input {
+			display: inline;
+			float: left;
+		}
+
+		input#s    {
+			border: none;
+			background-color: $search-bg;
+			@include box-shadow(#e2e2e2 0 2px 0 0 inset);
+			color: #000000;
+			font-family: "BodyCopy";
+			outline: 0;
+		}
+
+		input#searchsubmit {
+		    border: 0px;
+
+		    background: {
+		    	repeat: no-repeat;
+		    	position: 0 0;
+		    	color: none;
+		    }
+
+		    @include background-image(image-url("search-submit-btn.png"));
+		    @include background-size(cover);
+
+		    cursor: pointer;
+		    outline: 0;
+		}
+	}
+}
+
+#subheader {
+	width: 100%;
+
+	@include background-image(image-url("sub-page-header.png"));
+	@include background-size(cover);
+
+	background: {
+			repeat: no-repeat;
+	};
+}
+
+.menu-main {
+	background-color: #fdfdfd;
+	width: 100%;
+	height: 70px;
+	position: relative;
+	z-index: 10;
+	@include box-shadow(#e2e2e2 0px 4px 4px -2px);
+
+	#menu-default-navigation-menu {
+		width: 100%;
+
+		/*li.primary {
+			position: absolute;
+			top: 14px;
+			left: 0;
+			width: 100%;
+
+			.menu-button {
+				width: 10%;
+				height: 56px;
+				background-color: $nav-hover-color;
+			}
+
+			.sub-menu {
+				display: none;
+				width: 100%;
+				height: 400px;
+				background-color: #ffffff;
+				margin-top: 32px;
+			}
+
+			&:nth-child(2) .menu-button {
+				margin-left: 10%;
+			}
+
+			&:nth-child(3) .menu-button {
+				margin-left: 20%;
+			}
+
+			&:nth-child(4) .menu-button {
+				margin-left: 30%;
+			}
+
+			&:nth-child(5) .menu-button {
+				margin-left: 40%;
+			}
+
+			&:nth-child(6) .menu-button {
+				margin-left: 50%;
+			}
+
+			&:nth-child(7) .menu-button {
+				margin-left: 60%;
+			}
+
+			&:hover .sub-menu {
+				display: block;
+			}
+		}*/
+
+		li.primary {
+			display: inline-block;
+			height: 35px;
+			padding-left: 26px;
+			padding-right: 26px;
+			margin-top: 14px;
+			letter-spacing: 1px;
+			padding-top: 21px;
+				
+			a, a:visited, a:link, a:active {
+				color: $nav-text-color;
+				font-size: 15px;
+				font-family: "BoldCopy";
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+
+			&.active {
+				background-color: $nav-hover-color;
+
+				a {
+					color: $nav-text-hover;
+				}
+			}
+
+			.active-arrow {
+				margin-top: 19px;
+				width: 100%;
+				height: 20px;
+				
+				background: {
+			    	repeat: no-repeat;
+			    	position: 45% 0;
+			    	color: none;
+			    }
+
+			    @include background-image(image-url("menu-active-section-arrow.png"));
+
+				display: none;
+			}
+		}
+
+		li.primary:last-child {
+			padding-right: 29px;
+			position: absolute;
+			float: right;
+			display: inline;
+			top: 0;
+			right: 0;
+		}
+
+		li.primary.hover {
+			background-color: $nav-hover-color;
+
+			a {
+				color: $nav-text-hover;
+			}
+
+			.active-arrow {
+				display: block;
+			}
+		}
+	}
+
+	.menu-sub-wrapper {
+		width: 100%;
+		margin-top: 20px;
+
+		.menu-sub {
+			display: none;
+
+			background-color: white;
+
+			width: 100%;
+			height: 440px;
+
+			position: relative;
+
+			top: 0;
+			left: 0;
+
+			&.open {
+				display: block;
+			}
+		}
+	}
+}

@@ -1,0 +1,515 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: "BoldCopy";
+  src: url('../fonts/TradeGothicLTCom-Bd2.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "BodyCopy";
+  src: url('../fonts/UniversLTStd.otf') format('opentype');
+}
+
+#indicators {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#indicators p {
+  margin: 0 0 2px;
+  padding: 0.25em 1em;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: #000;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  #indicators p {
+    display: none;
+  }
+  #indicators p.l-show {
+    display: block;
+  }
+
+  #header {
+    padding-bottom: 32px;
+  }
+
+  #container {
+    width: 1024px;
+    margin: 50px auto 0 auto;
+  }
+
+  #slogan {
+    float: left;
+    font-size: 18px;
+    padding-top: 70px;
+    padding-left: 9px;
+  }
+
+  #logo {
+    float: left;
+    margin: 0 0 0 50px;
+    width: 318px;
+    height: 84px;
+  }
+
+  #contact-btn {
+    float: right;
+    margin: 0;
+    padding-right: 33px;
+    padding-top: 11px;
+    padding-left: 15%;
+    width: 171px;
+    height: 42px;
+  }
+  #contact-btn a, #contact-btn a:hover, #contact-btn a:active, #contact-btn a:link, #contact-btn a:visited {
+    font-size: 15px;
+    line-height: 320%;
+  }
+  #contact-btn div {
+    padding-right: 47px;
+    margin-left: -47px;
+  }
+
+  #searchform {
+    float: right;
+    padding-right: 33px;
+    padding-top: 8px;
+    padding-left: 15%;
+    margin: 0;
+    width: 219px;
+    height: 41px;
+  }
+  #searchform input#s {
+    width: 160px;
+    height: 34px;
+    padding-left: 12px;
+    font-size: 16px;
+    padding-top: 6px;
+  }
+  #searchform input#searchsubmit {
+    width: 46px;
+    height: 41px;
+  }
+
+  #subheader {
+    height: 70px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #indicators p {
+    display: none;
+  }
+  #indicators p.tl-show {
+    display: block;
+  }
+
+  #header {
+    padding-bottom: 20px;
+  }
+
+  #container {
+    width: 96%;
+    margin: 37px auto 0 auto;
+  }
+
+  #slogan {
+    float: left;
+    font-size: 13.5px;
+    padding-top: 53px;
+    padding-left: 9px;
+  }
+
+  #logo {
+    float: left;
+    margin: 0 0 0 25px;
+    width: 239px;
+    height: 63px;
+  }
+
+  #contact-btn {
+    float: right;
+    margin: 0;
+    padding-right: 25px;
+    padding-top: 0px;
+    padding-left: 15%;
+    width: 128px;
+    height: 32px;
+  }
+  #contact-btn a, #contact-btn a:hover, #contact-btn a:active, #contact-btn a:link, #contact-btn a:visited {
+    font-size: 12px;
+    line-height: 300%;
+  }
+  #contact-btn div {
+    padding-right: 35px;
+    margin-left: -35px;
+  }
+
+  #searchform {
+    float: right;
+    padding-right: 25px;
+    padding-top: 8px;
+    padding-left: 15%;
+    margin: 0;
+    width: 163px;
+    height: 30px;
+  }
+  #searchform input#s {
+    width: 120px;
+    height: 25px;
+    padding-left: 9px;
+    font-size: 12px;
+    padding-top: 4px;
+  }
+  #searchform input#searchsubmit {
+    width: 33px;
+    height: 30px;
+  }
+
+  #subheader {
+    height: 53px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #indicators p {
+    display: none;
+  }
+  #indicators p.hl-show {
+    display: block;
+  }
+
+  #container {
+    width: 90%;
+    margin: 30px auto 0 auto;
+  }
+
+  #header {
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  #logo {
+    float: none;
+    margin: 0 auto 0 auto;
+    width: 252px;
+    height: 67px;
+  }
+
+  #slogan {
+    float: none;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-left: 53%;
+  }
+
+  #contact-btn {
+    float: none;
+    padding-right: 54px;
+    padding-top: 40px;
+    margin: 0 auto 0 auto;
+    width: 180px;
+    height: 48px;
+  }
+  #contact-btn a, #contact-btn a:hover, #contact-btn a:active, #contact-btn a:link, #contact-btn a:visited {
+    font-size: 16px;
+    line-height: 340%;
+  }
+  #contact-btn div {
+    padding-right: 69px;
+  }
+
+  #searchform {
+    float: none;
+    padding-right: 0;
+    padding-top: 40px;
+    padding-left: 15px;
+    margin: 0 auto 0 auto;
+    width: 249px;
+    height: 46px;
+  }
+  #searchform input#s {
+    width: 183px;
+    height: 39px;
+    padding-left: 9px;
+    font-size: 16px;
+    padding-top: 6px;
+  }
+  #searchform input#searchsubmit {
+    width: 56px;
+    height: 46px;
+  }
+
+  #subheader {
+    height: 10px;
+  }
+}
+html, body {
+  background-color: #eeeeee;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#test {
+  font-family: "BodyCopy";
+}
+
+#header {
+  background-color: white;
+  padding-top: 42px;
+}
+#header #slogan {
+  color: #1d2875;
+  font-family: "BoldCopy";
+}
+#header #logo {
+  background-image: url('../images/datatrak-logo.svg?1399923446');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#header #contact-btn a, #header #contact-btn a:hover, #header #contact-btn a:active, #header #contact-btn a:link, #header #contact-btn a:visited {
+  color: #ffffff;
+  font-family: "BodyCopy";
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+#header #contact-btn div {
+  background-image: url('../images/contact-btn.png?1400031825');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+#header #searchform input {
+  display: inline;
+  float: left;
+}
+#header #searchform input#s {
+  border: none;
+  background-color: #eeeeee;
+  -webkit-box-shadow: #e2e2e2 0 2px 0 0 inset;
+  -moz-box-shadow: #e2e2e2 0 2px 0 0 inset;
+  box-shadow: #e2e2e2 0 2px 0 0 inset;
+  color: #000000;
+  font-family: "BodyCopy";
+  outline: 0;
+}
+#header #searchform input#searchsubmit {
+  border: 0px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: none;
+  background-image: url('../images/search-submit-btn.png?1400030783');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  cursor: pointer;
+  outline: 0;
+}
+
+#subheader {
+  width: 100%;
+  background-image: url('../images/sub-page-header.png?1400082913');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.menu-main {
+  background-color: #fdfdfd;
+  width: 100%;
+  height: 70px;
+  position: relative;
+  z-index: 10;
+  -webkit-box-shadow: #e2e2e2 0px 4px 4px -2px;
+  -moz-box-shadow: #e2e2e2 0px 4px 4px -2px;
+  box-shadow: #e2e2e2 0px 4px 4px -2px;
+}
+.menu-main #menu-default-navigation-menu {
+  width: 100%;
+  		/*li.primary {
+  			position: absolute;
+  			top: 14px;
+  			left: 0;
+  			width: 100%;
+  
+  			.menu-button {
+  				width: 10%;
+  				height: 56px;
+  				background-color: $nav-hover-color;
+  			}
+  
+  			.sub-menu {
+  				display: none;
+  				width: 100%;
+  				height: 400px;
+  				background-color: #ffffff;
+  				margin-top: 32px;
+  			}
+  
+  			&:nth-child(2) .menu-button {
+  				margin-left: 10%;
+  			}
+  
+  			&:nth-child(3) .menu-button {
+  				margin-left: 20%;
+  			}
+  
+  			&:nth-child(4) .menu-button {
+  				margin-left: 30%;
+  			}
+  
+  			&:nth-child(5) .menu-button {
+  				margin-left: 40%;
+  			}
+  
+  			&:nth-child(6) .menu-button {
+  				margin-left: 50%;
+  			}
+  
+  			&:nth-child(7) .menu-button {
+  				margin-left: 60%;
+  			}
+  
+  			&:hover .sub-menu {
+  				display: block;
+  			}
+  		}*/
+}
+.menu-main #menu-default-navigation-menu li.primary {
+  display: inline-block;
+  height: 35px;
+  padding-left: 26px;
+  padding-right: 26px;
+  margin-top: 14px;
+  letter-spacing: 1px;
+  padding-top: 21px;
+}
+.menu-main #menu-default-navigation-menu li.primary a, .menu-main #menu-default-navigation-menu li.primary a:visited, .menu-main #menu-default-navigation-menu li.primary a:link, .menu-main #menu-default-navigation-menu li.primary a:active {
+  color: #365064;
+  font-size: 15px;
+  font-family: "BoldCopy";
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.menu-main #menu-default-navigation-menu li.primary.active {
+  background-color: #d22448;
+}
+.menu-main #menu-default-navigation-menu li.primary.active a {
+  color: white;
+}
+.menu-main #menu-default-navigation-menu li.primary .active-arrow {
+  margin-top: 19px;
+  width: 100%;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: 45% 0;
+  background-color: none;
+  background-image: url('../images/menu-active-section-arrow.png?1400113322');
+  display: none;
+}
+.menu-main #menu-default-navigation-menu li.primary:last-child {
+  padding-right: 29px;
+  position: absolute;
+  float: right;
+  display: inline;
+  top: 0;
+  right: 0;
+}
+.menu-main #menu-default-navigation-menu li.primary.hover {
+  background-color: #d22448;
+}
+.menu-main #menu-default-navigation-menu li.primary.hover a {
+  color: white;
+}
+.menu-main #menu-default-navigation-menu li.primary.hover .active-arrow {
+  display: block;
+}
+.menu-main .menu-sub-wrapper {
+  width: 100%;
+  margin-top: 20px;
+}
+.menu-main .menu-sub-wrapper .menu-sub {
+  display: none;
+  background-color: white;
+  width: 100%;
+  height: 440px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.menu-main .menu-sub-wrapper .menu-sub.open {
+  display: block;
+}

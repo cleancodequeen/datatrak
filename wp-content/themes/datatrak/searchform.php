@@ -6,10 +6,10 @@ if( !defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Footer Template
+ * Search Form Template
  *
  *
- * @file           footer.php
+ * @file           searchform.php
  * @package        Datatrak
  * @author         Andrew Nida
  * @copyright      2014 Fig Company
@@ -19,8 +19,7 @@ if( !defined( 'ABSPATH' ) ) {
  * @since          available since Release 1.0
  */
 ?>
-
-	</div>
-<?php wp_footer(); ?>
-</body>
-</html>
+<form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+	<input type="text" class="field" name="s" id="s" placeholder="<?php esc_attr_e( 'search&hellip;', 'datatrak' ); ?>" />
+	<input type="submit" class="submit" name="submit" id="searchsubmit" value="" />
+</form>

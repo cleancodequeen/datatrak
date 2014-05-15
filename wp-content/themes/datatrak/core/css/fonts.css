@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "BoldCopy";
+  src: url('../fonts/TradeGothicLTCom-Bd2.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "BodyCopy";
+  src: url('../fonts/UniversLTStd.otf') format('opentype');
+}
