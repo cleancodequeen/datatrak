@@ -10,13 +10,12 @@ if ( !defined( 'ABSPATH' ) ) {
  *
  *
  * @file           functions.php
- * @package        Responsive
- * @author         Emil Uzelac
- * @copyright      2003 - 2014 CyberChimps
+ * @package        Datatrak
+ * @author         Andrew Nida
+ * @copyright      2014 Fig Company
  * @license        license.txt
- * @version        Release: 1.2.1
- * @filesource     wp-content/themes/responsive/includes/functions.php
- * @link           http://codex.wordpress.org/Theme_Development#Functions_File
+ * @version        Release: 1.0
+ * @filesource     wp-content/themes/datatrak/index.php
  * @since          available since Release 1.0
  */
 ?>
@@ -53,3 +52,5 @@ function datatrak_register_theme_menu() {
 }
 
 add_action( 'init', 'datatrak_register_theme_menu' );
+
+?>

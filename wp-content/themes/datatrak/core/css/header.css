@@ -60,7 +60,7 @@
 
 #subheader {
   width: 100%;
-  background-image: url('../images/sub-page-header.png?1400082913');
+  background-image: url('../images/sub-page-header.png?1400297109');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -80,117 +80,124 @@
 }
 .menu-main #menu-default-navigation-menu {
   width: 100%;
-  		/*li.primary {
-  			position: absolute;
-  			top: 14px;
-  			left: 0;
-  			width: 100%;
-  
-  			.menu-button {
-  				width: 10%;
-  				height: 56px;
-  				background-color: $nav-hover-color;
-  			}
-  
-  			.sub-menu {
-  				display: none;
-  				width: 100%;
-  				height: 400px;
-  				background-color: #ffffff;
-  				margin-top: 32px;
-  			}
-  
-  			&:nth-child(2) .menu-button {
-  				margin-left: 10%;
-  			}
-  
-  			&:nth-child(3) .menu-button {
-  				margin-left: 20%;
-  			}
-  
-  			&:nth-child(4) .menu-button {
-  				margin-left: 30%;
-  			}
-  
-  			&:nth-child(5) .menu-button {
-  				margin-left: 40%;
-  			}
-  
-  			&:nth-child(6) .menu-button {
-  				margin-left: 50%;
-  			}
-  
-  			&:nth-child(7) .menu-button {
-  				margin-left: 60%;
-  			}
-  
-  			&:hover .sub-menu {
-  				display: block;
-  			}
-  		}*/
 }
-.menu-main #menu-default-navigation-menu li.primary {
-  display: inline-block;
+.menu-main #menu-default-navigation-menu li {
+  float: left;
   height: 35px;
-  padding-left: 26px;
-  padding-right: 26px;
+  padding-left: 2.6%;
+  padding-right: 2.6%;
   margin-top: 14px;
   letter-spacing: 1px;
   padding-top: 21px;
 }
-.menu-main #menu-default-navigation-menu li.primary a, .menu-main #menu-default-navigation-menu li.primary a:visited, .menu-main #menu-default-navigation-menu li.primary a:link, .menu-main #menu-default-navigation-menu li.primary a:active {
+.menu-main #menu-default-navigation-menu li a, .menu-main #menu-default-navigation-menu li a:visited, .menu-main #menu-default-navigation-menu li a:link, .menu-main #menu-default-navigation-menu li a:active {
   color: #365064;
   font-size: 15px;
   font-family: "BoldCopy";
   text-decoration: none;
   text-transform: uppercase;
 }
-.menu-main #menu-default-navigation-menu li.primary.active {
+.menu-main #menu-default-navigation-menu li.active {
   background-color: #d22448;
 }
-.menu-main #menu-default-navigation-menu li.primary.active a {
+.menu-main #menu-default-navigation-menu li.active a {
   color: white;
 }
-.menu-main #menu-default-navigation-menu li.primary .active-arrow {
+.menu-main #menu-default-navigation-menu li .active-arrow {
+  padding-top: 12px;
   margin-top: 19px;
   width: 100%;
   height: 20px;
   background-repeat: no-repeat;
-  background-position: 45% 0;
+  background-position: 45% bottom;
   background-color: none;
   background-image: url('../images/menu-active-section-arrow.png?1400113322');
   display: none;
 }
-.menu-main #menu-default-navigation-menu li.primary:last-child {
-  padding-right: 29px;
+.menu-main #menu-default-navigation-menu li:last-child {
+  padding-right: 2.5%;
   position: absolute;
   float: right;
   display: inline;
   top: 0;
   right: 0;
 }
-.menu-main #menu-default-navigation-menu li.primary.hover {
+.menu-main #menu-default-navigation-menu li.hover {
   background-color: #d22448;
 }
-.menu-main #menu-default-navigation-menu li.primary.hover a {
+.menu-main #menu-default-navigation-menu li.hover a {
   color: white;
 }
-.menu-main #menu-default-navigation-menu li.primary.hover .active-arrow {
+.menu-main #menu-default-navigation-menu li.hover .active-arrow {
   display: block;
 }
-.menu-main .menu-sub-wrapper {
-  width: 100%;
-  margin-top: 20px;
+.menu-main .menu-sub {
+  width: 98%;
+  margin: 20px 1% 0 1%;
 }
-.menu-main .menu-sub-wrapper .menu-sub {
+.menu-main .menu-sub ul {
+  position: relative;
+}
+.menu-main .menu-sub ul li.primary {
   display: none;
   background-color: white;
   width: 100%;
-  height: 440px;
-  position: relative;
-  top: 0;
-  left: 0;
+  min-height: 225px;
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  padding-top: 20px;
+  padding-bottom: 12px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-color: none;
+  background-image: url('../images/sub-menu-bg.png?1400297402');
 }
-.menu-main .menu-sub-wrapper .menu-sub.open {
+.menu-main .menu-sub ul li.primary a, .menu-main .menu-sub ul li.primary a:visited, .menu-main .menu-sub ul li.primary a:hover, .menu-main .menu-sub ul li.primary a:link {
+  padding-left: 3.5%;
+  color: #365064;
+  font-size: 24px;
+  font-family: "BoldCopy";
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.menu-main .menu-sub ul li.primary ul {
+  width: 100%;
+  border-top: solid 1px #c0c0c0;
+  margin-top: 21px;
+}
+.menu-main .menu-sub ul li.primary li.secondary {
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+  padding-top: 31px;
+  margin-left: 3.5%;
+  padding-bottom: 37px;
+}
+.menu-main .menu-sub ul li.primary li.secondary:last-child {
+  padding-right: 20%;
+}
+.menu-main .menu-sub ul li.primary li.secondary a, .menu-main .menu-sub ul li.primary li.secondary a:visited, .menu-main .menu-sub ul li.primary li.secondary a:hover, .menu-main .menu-sub ul li.primary li.secondary a:link {
+  color: #d22448;
+  font-size: 18px;
+  font-family: "BoldCopy";
+  text-decoration: none;
+  display: block;
+  padding-left: 0;
+}
+.menu-main .menu-sub ul li.primary li.secondary a .title, .menu-main .menu-sub ul li.primary li.secondary a:visited .title, .menu-main .menu-sub ul li.primary li.secondary a:hover .title, .menu-main .menu-sub ul li.primary li.secondary a:link .title {
+  display: block;
+  border-left: solid 3px #d22448;
+  padding-left: 7px;
+}
+.menu-main .menu-sub ul li.primary li.secondary a .sub, .menu-main .menu-sub ul li.primary li.secondary a:visited .sub, .menu-main .menu-sub ul li.primary li.secondary a:hover .sub, .menu-main .menu-sub ul li.primary li.secondary a:link .sub {
+  font-family: "BodyCopy";
+  font-size: 15px;
+  color: #212662;
+  text-transform: none;
+  padding-top: 23px;
+  display: block;
+}
+.menu-main .menu-sub ul li.primary.open {
   display: block;
 }
