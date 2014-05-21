@@ -1,0 +1,114 @@
+@import "compass";
+@import "compass/css3";
+
+$footer-background-color: #252523;
+
+#footer {
+	width: 100%;
+	max-width: 1125px;
+	margin: 0 auto 0 auto;
+	background-color: $footer-background-color;
+
+	#sitemap {
+		@media screen and (min-width: 769px) {
+			@include column-count(4);
+			height: 300px;
+			text-align: left;
+			padding-left: 8%;
+		}
+
+		@media screen and (max-width: 768px) {
+			@include column-count(0);
+			height: auto;
+			text-align: center;
+			padding-left: 0%;
+		}
+
+		width: 90%;
+		margin: 0 auto 0 auto;
+		padding-top: 83px;
+		margin-bottom: 40px;
+
+		.main li {
+			a, a:hover, a:visited, a:link {
+				font-family: "CondensedCopy";
+
+				@media screen and (min-width: 1024px) {
+					font-size: 15px;
+				}
+
+				@media screen and (min-width: 768px) and (max-width: 1023px) {
+					font-size: 13px;
+				}
+
+				color: #e1ff00;
+				text-decoration: none;
+			}
+
+			@media screen and (min-width: 1024px) {
+				padding-top: 0px;
+			}
+
+			@media screen and (min-width: 768px) and (max-width: 1023px) {
+				padding-top: 1px;
+			}
+
+			@media screen and (min-width: 769px) {
+				&:nth-child(1) {
+					padding-bottom: 20px;
+				}
+
+				&:nth-child(4) {
+					padding-bottom: 55px;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				&:nth-child(1) {
+					padding-bottom: 0px;
+				}
+
+				&:nth-child(4) {
+					padding-bottom: 0px;
+				}
+			}
+
+			a.main-cat {
+				display: block;
+				padding-bottom: 32px;
+			}
+
+			.sub {
+				padding-bottom: 20px;
+			}
+
+			.sub li {
+				a, a:hover, a:visited, a:link {
+					color: #ffffff;
+				}
+
+				width: 80%;
+
+				@media screen and (min-width: 769px) {
+					width: 80%;
+				}
+
+				@media screen and (max-width: 768px) {
+					width: 100%;
+				}
+
+				padding-bottom: 9px;
+			}
+		}
+	}
+
+	.cnss-social-icon {
+		margin: 0 auto 0 auto !important;
+
+		tbody tr td {
+			padding-left: 26px !important;
+		}
+	}
+
+	padding-bottom: 73px;
+}

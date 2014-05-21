@@ -7,3 +7,8 @@
   font-family: "BodyCopy";
   src: url('../fonts/UniversLTStd.otf') format('opentype');
 }
+
+@font-face {
+  font-family: "CondensedCopy";
+  src: url('../fonts/UniversLTStd-Cn.otf') format('opentype');
+}

@@ -37,9 +37,14 @@
 		});
 	}
 
+	datatrak.initFooter = function() {
+		$j('.cnss-social-icon').css('width', '220px');
+	}
+
 	$j(document).ready(function() {
 
 		datatrak.initMainMenu();
 		datatrak.initMobileMenu();
+		datatrak.initFooter();
 	});
 })();
