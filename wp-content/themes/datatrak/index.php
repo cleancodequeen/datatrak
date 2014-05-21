@@ -21,6 +21,8 @@ if( !defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
-<p id="test">testing index <?php echo wp_title(); ?></p>
+<div style="height: 1000px;">
+	<p id="test">testing index <?php echo wp_title(); ?></p>
+</div>
 
 <?php get_footer(); ?>

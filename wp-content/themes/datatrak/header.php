@@ -59,7 +59,7 @@ if( !defined( 'ABSPATH' ) ) {
 			<div id="contact-btn"><a href="#" target="_blank"><div><?php echo __( 'GET IN TOUCH', 'datatrak' ); ?></div></a></div>
 			<?php get_search_form(); ?>
 		</div>
-		<?php if (is_home()) { ?><div id="subheader"></div> <?php  } ?>
+		<?php if (!is_front_page()) { ?><div id="subheader"></div> <?php  } ?>
 		<nav class="menu-main">
     		<?php
 				wp_nav_menu (
@@ -84,4 +84,16 @@ if( !defined( 'ABSPATH' ) ) {
 					);
 				?>
 			</nav>
+		</nav>
+		<nav class="menu-mobile">
+			<?php
+				wp_nav_menu (
+					array (
+						'theme_location' => 'primary',
+						'container' => false,
+						'depth' => 0,
+						'walker' => new Mobile_Menu()
+					)
+				);
+			?>
 		</nav>

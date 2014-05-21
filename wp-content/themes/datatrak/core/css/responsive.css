@@ -89,6 +89,34 @@
   #subheader {
     height: 70px;
   }
+
+  .menu-main {
+    display: block;
+  }
+  .menu-main #menu-default-navigation-menu li {
+    padding-left: 2.6%;
+    padding-right: 2.6%;
+  }
+  .menu-main #menu-default-navigation-menu li a, .menu-main #menu-default-navigation-menu li a:visited, .menu-main #menu-default-navigation-menu li a:link, .menu-main #menu-default-navigation-menu li a:active {
+    font-size: 15px;
+  }
+  .menu-main #menu-default-navigation-menu li:last-child {
+    padding-right: 2.5%;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .menu-sub ul li.primary a, .menu-sub ul li.primary a:visited, .menu-sub ul li.primary a:hover, .menu-sub ul li.primary a:link {
+    font-size: 24px;
+  }
+  .menu-sub ul li.primary li.secondary a, .menu-sub ul li.primary li.secondary a:visited, .menu-sub ul li.primary li.secondary a:hover, .menu-sub ul li.primary li.secondary a:link {
+    font-size: 18px;
+  }
+  .menu-sub ul li.primary li.secondary a .sub, .menu-sub ul li.primary li.secondary a:visited .sub, .menu-sub ul li.primary li.secondary a:hover .sub, .menu-sub ul li.primary li.secondary a:link .sub {
+    font-size: 15px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   #indicators p {
@@ -163,6 +191,47 @@
   #subheader {
     height: 53px;
   }
+
+  .menu-main {
+    display: block;
+  }
+  .menu-main #menu-default-navigation-menu li {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+  .menu-main #menu-default-navigation-menu li a, .menu-main #menu-default-navigation-menu li a:visited, .menu-main #menu-default-navigation-menu li a:link, .menu-main #menu-default-navigation-menu li a:active {
+    font-size: 12px;
+  }
+  .menu-main #menu-default-navigation-menu li:last-child {
+    padding-right: 2.6%;
+    float: left;
+  }
+
+  .menu-sub ul li.primary a, .menu-sub ul li.primary a:visited, .menu-sub ul li.primary a:hover, .menu-sub ul li.primary a:link {
+    font-size: 18px;
+  }
+  .menu-sub ul li.primary li.secondary a, .menu-sub ul li.primary li.secondary a:visited, .menu-sub ul li.primary li.secondary a:hover, .menu-sub ul li.primary li.secondary a:link {
+    font-size: 15px;
+  }
+  .menu-sub ul li.primary li.secondary a .sub, .menu-sub ul li.primary li.secondary a:visited .sub, .menu-sub ul li.primary li.secondary a:hover .sub, .menu-sub ul li.primary li.secondary a:link .sub {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  .menu-main {
+    display: block;
+  }
+  .menu-main #menu-default-navigation-menu li {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+  .menu-main #menu-default-navigation-menu li a, .menu-main #menu-default-navigation-menu li a:visited, .menu-main #menu-default-navigation-menu li a:link, .menu-main #menu-default-navigation-menu li a:active {
+    font-size: 10px;
+  }
+  .menu-main #menu-default-navigation-menu li:last-child {
+    padding-right: 2.6%;
+    float: left;
+  }
 }
 @media screen and (max-width: 767px) {
   #indicators p {
@@ -235,5 +304,9 @@
 
   #subheader {
     height: 10px;
+  }
+
+  .menu-main {
+    display: none;
   }
 }

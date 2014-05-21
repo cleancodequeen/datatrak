@@ -116,6 +116,53 @@
 	#subheader {
 		height: 70px;
 	}
+
+	.menu-main {
+		display: block;
+
+		#menu-default-navigation-menu {
+			li {
+				padding-left: 2.6%;
+				padding-right: 2.6%;
+
+
+				a, a:visited, a:link, a:active {
+					font-size: 15px;
+				}
+
+
+			}
+
+			li:last-child {
+				padding-right: 2.5%;
+				float: right;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+
+	.menu-sub {
+
+		ul li.primary {
+
+			a, a:visited, a:hover, a:link {
+				font-size: 24px;
+			}
+
+			li.secondary {
+
+				a, a:visited, a:hover, a:link {
+					font-size: 18px;
+
+					.sub {
+						font-size: 15px;
+					}
+				}
+			}
+		}
+	}
 }
 
 // **************************************************
@@ -210,6 +257,81 @@
 	#subheader {
 		height: 53px;
 	}
+
+	.menu-main {
+		display: block;
+
+		#menu-default-navigation-menu {
+			li {
+				padding-left: 2.5%;
+				padding-right: 2.5%;
+
+
+				a, a:visited, a:link, a:active {
+					font-size: 12px;
+				}
+
+
+			}
+
+			li:last-child {
+				padding-right: 2.6%;
+				float: left;
+			}
+		}
+	}
+
+	.menu-sub {
+
+		ul li.primary {
+
+			a, a:visited, a:hover, a:link {
+				font-size: 18px;
+			}
+
+			li.secondary {
+
+				a, a:visited, a:hover, a:link {
+					font-size: 15px;
+
+					.sub {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// **************************************************
+//
+// >768px, <900px
+//
+// **************************************************
+
+@media screen and (min-width: 768px) and (max-width: 900px) {
+	.menu-main {
+		display: block;
+
+		#menu-default-navigation-menu {
+			li {
+				padding-left: 2.5%;
+				padding-right: 2.5%;
+
+
+				a, a:visited, a:link, a:active {
+					font-size: 10px;
+				}
+
+
+			}
+
+			li:last-child {
+				padding-right: 2.6%;
+				float: left;
+			}
+		}
+	}
 }
 
 // **************************************************
@@ -302,5 +424,9 @@
 
 	#subheader {
 		height: 10px;
+	}
+
+	.menu-main {
+		display: none;
 	}
 }

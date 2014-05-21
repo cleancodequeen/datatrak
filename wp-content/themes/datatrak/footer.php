@@ -19,7 +19,7 @@ if( !defined( 'ABSPATH' ) ) {
  * @since          available since Release 1.0
  */
 ?>
-
+	<div id="footer">I am the footer</div>
 	</div>
 <?php wp_footer(); ?>
 </body>

@@ -113,7 +113,6 @@ $nav-text-hover: #ffffff;
 				
 			a, a:visited, a:link, a:active {
 				color: $nav-text-color;
-				font-size: 15px;
 				font-family: "BoldCopy";
 				text-decoration: none;
 				text-transform: uppercase;
@@ -145,15 +144,6 @@ $nav-text-hover: #ffffff;
 			}
 		}
 
-		li:last-child {
-			padding-right: 2.5%;
-			position: absolute;
-			float: right;
-			display: inline;
-			top: 0;
-			right: 0;
-		}
-
 		li.hover {
 			background-color: $nav-hover-color;
 
@@ -179,7 +169,12 @@ $nav-text-hover: #ffffff;
 		ul li.primary {
 			display: none;
 
+			//&:nth-child(2) {
+			//	display: block;
+			//}
+
 			background-color: white;
+			@include box-shadow(#e2e2e2 0px 10px 10px -5px);
 
 			width: 100%;
 			min-height: 225px;
@@ -190,7 +185,7 @@ $nav-text-hover: #ffffff;
 			left: 0px;
 
 			padding-top: 20px;
-			padding-bottom: 12px;
+			padding-bottom: 50px;
 
 			background: {
 		    	repeat: no-repeat;
@@ -203,7 +198,6 @@ $nav-text-hover: #ffffff;
 			a, a:visited, a:hover, a:link {
 				padding-left: 3.5%;
 				color: #365064;
-				font-size: 24px;
 				font-family: "BoldCopy";
 				text-decoration: none;
 				text-transform: uppercase;
@@ -222,7 +216,7 @@ $nav-text-hover: #ffffff;
 				width: 	20%;
 				padding-top: 31px;
 				margin-left: 3.5%;
-				padding-bottom: 37px;
+				padding-bottom: 18px;
 
 				&:last-child {
 					padding-right: 20%;
@@ -230,7 +224,6 @@ $nav-text-hover: #ffffff;
 
 				a, a:visited, a:hover, a:link {
 					color: #d22448;
-					font-size: 18px;
 					font-family: "BoldCopy";
 					text-decoration: none;
 					display: block;
@@ -244,7 +237,6 @@ $nav-text-hover: #ffffff;
 
 					.sub {
 						font-family: "BodyCopy";
-						font-size: 15px;
 						color: #212662;
 						text-transform: none;
 						padding-top: 23px;
@@ -259,3 +251,101 @@ $nav-text-hover: #ffffff;
 		}
 	}
 }
+
+.menu-mobile {
+
+		width: 100%;
+		text-align: center;
+		border-top: 1px solid #e3e3e3;
+
+		a, a:hover, a:visited, a:link {
+			color: #212662;;
+			text-decoration: none;
+			font-family: "BoldCopy";
+			font-size: 16px;
+		}
+
+		@media screen and (min-width: 769px) {
+			display: none;
+		}
+
+		@media screen and (max-width: 768px) {
+			display: block;
+		}
+
+		ul, ul li {
+			width: 100%;
+		}
+
+		ul li .primary-button {
+
+			a, a:hover, a:visited, a:link {
+				color: #365064;
+				text-transform: uppercase;
+			}
+
+			width: 100%;
+			background-color: #fdfdfd;
+
+			padding-bottom: 25px;
+			padding-top: 25px;
+
+			border-bottom: 1px solid #e3e3e3;
+
+			position: relative;
+
+			.expand {
+				position: absolute;
+				top: 27%;
+				right: 5%;
+				font-size: 32px;
+				color: #365064;
+				cursor: pointer;
+		    	outline: 0;
+		    	display: none;
+			}
+		}
+
+		.mobile-sub-menu {
+			width: 100%;
+			overflow: hidden;
+
+			ul {
+				height: 0px;
+				background-color: #fdfdfd;
+				border-bottom: 0px;
+			}
+		}
+
+		ul li.active {
+
+			.primary-button {
+				background-color: $nav-hover-color;
+
+				a, a:hover, a:visited, a:link {
+					color: #ffffff;
+				}
+
+				.expand {
+					color: #ffffff;
+				}
+			}
+			
+
+			.mobile-sub-menu ul {
+				height: auto;
+				border-bottom: 1px solid #e3e3e3;
+
+				li {
+					padding-top: 25px;
+					padding-bottom: 25px;
+				}
+			}
+		}
+
+		ul li.menu-item-has-children {
+			.primary-button .expand {
+				display: block;
+			}
+		}
+	}

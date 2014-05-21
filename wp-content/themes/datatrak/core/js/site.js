@@ -25,8 +25,21 @@
 		});
 	}
 
+	datatrak.initMobileMenu = function() {
+		$j('#menu-default-navigation-menu-2 li .expand').click(function() {
+
+			if ( $j(this).parent().parent().hasClass('active') ) {
+				$j(this).parent().parent().removeClass('active')
+			} else {
+				$j('#menu-default-navigation-menu-2 li').removeClass('active');
+				$j(this).parent().parent().addClass('active');
+			}
+		});
+	}
+
 	$j(document).ready(function() {
 
 		datatrak.initMainMenu();
+		datatrak.initMobileMenu();
 	});
 })();
