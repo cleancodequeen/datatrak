@@ -4,16 +4,34 @@
 $footer-background-color: #252523;
 
 #footer-widget {
-	width: 1014px;
+	@media screen and (min-width: 1024px) {
+		width: 1014px;
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1023px) {
+		width: 90%;
+	}
+
+	@media screen and (min-width: 769px) {
+		width: 100%;
+	}
+
 	margin: 0 auto 0 auto;
 	padding-top: 80px;
 	background-color: #ffffff;
 
 	.widget-area {
 		display: inline-block;
-		width: 42.5%;
 		float: left;
 		margin-left: 4.1%;
+
+		@media screen and (min-width: 769px) {
+			width: 42.5%;
+		}
+
+		@media screen and (max-width: 768px) {
+			width: 90%;
+		}
 
 		&:first-child {
 			margin-right: 2%;
@@ -25,18 +43,50 @@ $footer-background-color: #252523;
 
 			.widget-title {
 				font-family: "CondensedCopy";
-				font-size: 35px;
 				color: #000000;
+
+				 
+				@media screen and (min-width: 1024px) {
+					h5 {
+						font-size: 35px;
+					}
+				}
+
+				@media screen and (max-width: 1023px) {
+				 	h5 {
+				 		font-size: 28px;
+				 	}
+				}
+
+				// @media screen and (max-width: 767px) {
+				// 	h5 {
+				// 		font-size: 28px;
+				// 	}
+				// }
 			}
 
 			.upw-more {
-				top: 3.3%;
 				right: 0%;
 				position: absolute;
 
+				@media screen and (min-width: 1024px) {
+					top: 12px;
+				}
+
+				@media screen and (max-width: 1023px) {
+					top: 8px;
+				}
+
 				a, a:hover, a:visited, a:link {
 					font-family: "BodyCopy";
-					font-size: 15px;
+
+					@media screen and (min-width: 1024px) {
+						font-size: 15px;
+					}
+
+					@media screen and (max-width: 1023px) {
+						font-size: 13px;
+					}
 					color: #b80221;
 					text-transform: uppercase;
 					text-decoration: none;
@@ -46,8 +96,16 @@ $footer-background-color: #252523;
 			ul {
 				width: 100%;
 				border-top: solid 1px #cecece;
-				margin-top: 32px;
-				padding-bottom: 72px;
+
+				@media screen and (min-width: 1024px) {
+					margin-top: 32px;
+					padding-bottom: 72px;
+				}
+
+				@media screen and (max-width: 1023px) {
+					margin-top: 24px;
+					padding-bottom: 64px;
+				}
 
 				li {
 					width: 100%;
@@ -68,12 +126,11 @@ $footer-background-color: #252523;
 						}
 
 						.post-excerpt a, .post-excerpt a:hover, .post-excerpt a:link, .post-excerpt a:visited {
-							display: block;
-							float: left;
 							color: #202b75;
 							font-family: "BoldHeadline";
 							text-decoration: none;
 							text-transform: uppercase;
+							display: block;
 						}
 					}
 				}

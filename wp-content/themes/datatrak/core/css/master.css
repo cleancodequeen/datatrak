@@ -672,16 +672,39 @@ html, body {
 }
 
 #footer-widget {
-  width: 1014px;
   margin: 0 auto 0 auto;
   padding-top: 80px;
   background-color: #ffffff;
 }
+@media screen and (min-width: 1024px) {
+  #footer-widget {
+    width: 1014px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #footer-widget {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 769px) {
+  #footer-widget {
+    width: 100%;
+  }
+}
 #footer-widget .widget-area {
   display: inline-block;
-  width: 42.5%;
   float: left;
   margin-left: 4.1%;
+}
+@media screen and (min-width: 769px) {
+  #footer-widget .widget-area {
+    width: 42.5%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #footer-widget .widget-area {
+    width: 90%;
+  }
 }
 #footer-widget .widget-area:first-child {
   margin-right: 2%;
@@ -691,26 +714,63 @@ html, body {
 }
 #footer-widget .widget-area .widget-wrapper .widget-title {
   font-family: "CondensedCopy";
-  font-size: 35px;
   color: #000000;
 }
+@media screen and (min-width: 1024px) {
+  #footer-widget .widget-area .widget-wrapper .widget-title h5 {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #footer-widget .widget-area .widget-wrapper .widget-title h5 {
+    font-size: 28px;
+  }
+}
 #footer-widget .widget-area .widget-wrapper .upw-more {
-  top: 3.3%;
   right: 0%;
   position: absolute;
 }
+@media screen and (min-width: 1024px) {
+  #footer-widget .widget-area .widget-wrapper .upw-more {
+    top: 12px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #footer-widget .widget-area .widget-wrapper .upw-more {
+    top: 8px;
+  }
+}
 #footer-widget .widget-area .widget-wrapper .upw-more a, #footer-widget .widget-area .widget-wrapper .upw-more a:hover, #footer-widget .widget-area .widget-wrapper .upw-more a:visited, #footer-widget .widget-area .widget-wrapper .upw-more a:link {
   font-family: "BodyCopy";
-  font-size: 15px;
   color: #b80221;
   text-transform: uppercase;
   text-decoration: none;
 }
+@media screen and (min-width: 1024px) {
+  #footer-widget .widget-area .widget-wrapper .upw-more a, #footer-widget .widget-area .widget-wrapper .upw-more a:hover, #footer-widget .widget-area .widget-wrapper .upw-more a:visited, #footer-widget .widget-area .widget-wrapper .upw-more a:link {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #footer-widget .widget-area .widget-wrapper .upw-more a, #footer-widget .widget-area .widget-wrapper .upw-more a:hover, #footer-widget .widget-area .widget-wrapper .upw-more a:visited, #footer-widget .widget-area .widget-wrapper .upw-more a:link {
+    font-size: 13px;
+  }
+}
 #footer-widget .widget-area .widget-wrapper ul {
   width: 100%;
   border-top: solid 1px #cecece;
-  margin-top: 32px;
-  padding-bottom: 72px;
+}
+@media screen and (min-width: 1024px) {
+  #footer-widget .widget-area .widget-wrapper ul {
+    margin-top: 32px;
+    padding-bottom: 72px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #footer-widget .widget-area .widget-wrapper ul {
+    margin-top: 24px;
+    padding-bottom: 64px;
+  }
 }
 #footer-widget .widget-area .widget-wrapper ul li {
   width: 100%;
@@ -729,12 +789,11 @@ html, body {
   text-transform: uppercase;
 }
 #footer-widget .widget-area .widget-wrapper ul li .upw-content .post-excerpt a, #footer-widget .widget-area .widget-wrapper ul li .upw-content .post-excerpt a:hover, #footer-widget .widget-area .widget-wrapper ul li .upw-content .post-excerpt a:link, #footer-widget .widget-area .widget-wrapper ul li .upw-content .post-excerpt a:visited {
-  display: block;
-  float: left;
   color: #202b75;
   font-family: "BoldHeadline";
   text-decoration: none;
   text-transform: uppercase;
+  display: block;
 }
 
 #footer {

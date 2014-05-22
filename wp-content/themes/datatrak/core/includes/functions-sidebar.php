@@ -27,8 +27,8 @@ function datatrak_widgets_init() {
 						  'name'          => __( 'Footer Widget', 'datatrak' ),
 						  'description'   => __( 'Area 0 - Latest News and Events from Datatrak', 'datatrak' ),
 						  'id'            => 'footer-widget',
-						  'before_title'  => '<div class="widget-title"><h3>',
-						  'after_title'   => '</h3></div>',
+						  'before_title'  => '<div class="widget-title"><h5>',
+						  'after_title'   => '</h5></div>',
 						  'before_widget' => '<div id="%1$s" class="widget-area"><div class="widget-wrapper">',
 						  'after_widget'  => '</div></div>'
 					  ) );
