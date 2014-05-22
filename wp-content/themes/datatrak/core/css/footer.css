@@ -1,3 +1,69 @@
+#footer-widget {
+  width: 1014px;
+  margin: 0 auto 0 auto;
+  padding-top: 80px;
+  background-color: #ffffff;
+}
+#footer-widget .widget-area {
+  display: inline-block;
+  width: 42.5%;
+  float: left;
+  margin-left: 4.1%;
+}
+#footer-widget .widget-area:first-child {
+  margin-right: 2%;
+}
+#footer-widget .widget-area .widget-wrapper {
+  position: relative;
+}
+#footer-widget .widget-area .widget-wrapper .widget-title {
+  font-family: "CondensedCopy";
+  font-size: 35px;
+  color: #000000;
+}
+#footer-widget .widget-area .widget-wrapper .upw-more {
+  top: 3.3%;
+  right: 0%;
+  position: absolute;
+}
+#footer-widget .widget-area .widget-wrapper .upw-more a, #footer-widget .widget-area .widget-wrapper .upw-more a:hover, #footer-widget .widget-area .widget-wrapper .upw-more a:visited, #footer-widget .widget-area .widget-wrapper .upw-more a:link {
+  font-family: "BodyCopy";
+  font-size: 15px;
+  color: #b80221;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+#footer-widget .widget-area .widget-wrapper ul {
+  width: 100%;
+  border-top: solid 1px #cecece;
+  margin-top: 32px;
+  padding-bottom: 72px;
+}
+#footer-widget .widget-area .widget-wrapper ul li {
+  width: 100%;
+  margin-top: 42px;
+  padding-bottom: 18px;
+}
+#footer-widget .widget-area .widget-wrapper ul li .upw-content {
+  line-height: 160%;
+  font-size: 15px;
+  font-family: "BodyCopy";
+}
+#footer-widget .widget-area .widget-wrapper ul li .upw-content .post-title a, #footer-widget .widget-area .widget-wrapper ul li .upw-content .post-title a:hover, #footer-widget .widget-area .widget-wrapper ul li .upw-content .post-title a:link, #footer-widget .widget-area .widget-wrapper ul li .upw-content .post-title a:visited {
+  font-family: "BoldHeadline";
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#footer-widget .widget-area .widget-wrapper ul li .upw-content .post-excerpt a, #footer-widget .widget-area .widget-wrapper ul li .upw-content .post-excerpt a:hover, #footer-widget .widget-area .widget-wrapper ul li .upw-content .post-excerpt a:link, #footer-widget .widget-area .widget-wrapper ul li .upw-content .post-excerpt a:visited {
+  display: block;
+  float: left;
+  color: #202b75;
+  font-family: "BoldHeadline";
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 #footer {
   width: 100%;
   max-width: 1125px;
@@ -102,4 +168,7 @@
 }
 #footer .cnss-social-icon {
   margin: 0 auto 0 auto !important;
+}
+#footer .cnss-social-icon tbody tr td {
+  padding-left: 26px !important;
 }

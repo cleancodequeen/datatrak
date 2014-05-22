@@ -19,6 +19,13 @@ if( !defined( 'ABSPATH' ) ) {
  * @since          available since Release 1.0
  */
 ?>
+		<div id="footer-widget" class="group">
+			<?php if( is_active_sidebar( 'footer-widget' ) ) : ?>
+
+				<?php dynamic_sidebar( 'footer-widget' ); ?>
+
+			<?php endif; //end of colophon-widget ?>
+		</div><!-- end of #footer-widget -->
 	</div>
 	<div id="footer">
 		<nav id="sitemap">

@@ -12,3 +12,8 @@
   font-family: "CondensedCopy";
   src: url('../fonts/UniversLTStd-Cn.otf') format('opentype');
 }
+
+@font-face {
+  font-family: "BoldHeadline";
+  src: url('../fonts/UniversLTStd-Bold.otf') format('opentype');
+}

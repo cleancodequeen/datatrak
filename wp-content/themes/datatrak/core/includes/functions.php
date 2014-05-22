@@ -53,4 +53,14 @@ function datatrak_register_theme_menu() {
 
 add_action( 'init', 'datatrak_register_theme_menu' );
 
+/**
+ * Remove comments and tools from admin menu
+ */
+
+function datatrak_remove_menus() {
+  remove_menu_page( 'edit-comments.php' );          //Comments
+  remove_menu_page( 'tools.php' );                  //Tools
+}
+add_action( 'admin_menu', 'datatrak_remove_menus' );
+
 ?>
