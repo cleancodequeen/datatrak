@@ -25,59 +25,20 @@ if( !defined( 'ABSPATH' ) ) {
 				<?php dynamic_sidebar( 'footer-widget' ); ?>
 
 			<?php endif; //end of colophon-widget ?>
-		</div><!-- end of #footer-widget -->
+		</div>
 	</div>
 	<div id="footer">
 		<nav id="sitemap">
-			<ul class="main">
-				<li>
-					<a class="main-cat" href="#">COMPANY</a>
-					<ul class="sub">
-						<li><a href="#">ABOUT DATATRAK</a></li>
-						<li><a href="#">MANAGEMENT TEAM</a></li>
-						<li><a href="#">BOARD OF DIRECTORS</a></li>
-						<li><a href="#">RESOURCES</a></li>
-						<li><a href="#">CAREERS</a></li>
-						<li><a href="#">INVESTORS</a></li>
-						<li><a href="#">BLOG</a></li>
-						<li><a href="#">CONTACT</a></li>
-					</ul>
-				</li>
-				<li>
-					<a class="main-cat" href="#">SOLUTIONS</a>
-				</li>
-				<li>
-					<a class="main-cat" href="#">PRODUCTS</a>
-					<ul class="sub">
-						<li><a href="#">uCTMS&#0153;</a></li>
-						<li><a href="#">uDesign&#0153;</a></li>
-						<li><a href="#">uEDC&#0153;</a></li>
-						<li><a href="#">uIRT&#0153;</a></li>
-						<li><a href="#">uPRO&#0153;</a></li>
-						<li><a href="#">uSAFETY&#0153;</a></li>
-						<li><a href="#">uTRAIN&#0153;</a></li>
-					</ul>
-				</li>
-				<li>
-					<a class="main-cat" href="#">SERVICES</a>
-					<ul class="sub">
-						<li><a href="#">DATATRAK Clinical &amp; Consulting Services</a></li>
-						<li><a href="#">Training</a></li>
-						<li><a href="#">Support</a></li>
-						<li><a href="#">Learning Center</a></li>
-						<li><a href="#">Hosting</a></li>
-						<li><a href="#">Standards</a></li>
-					</ul>
-				</li>
-				<li>
-					<a class="main-cat" href="#">PARTNERS</a>
-					<ul class="sub">
-						<li><a href="#">CRO Connect Partners</a></li>
-						<li><a href="#">Technology Connect Program</a></li>
-						<li><a href="#">Strategic Partners</a></li>
-					</ul>
-				</li>
-			</ul>
+		<?php
+			wp_nav_menu (
+				array (
+					'theme_location' => 'footer',
+					'container' => false,
+					'depth' => 0,
+					'walker' => new Footer_Site_Map()
+				)
+			);
+		?>
 		</nav>
 		<?php if ( function_exists('cn_social_icon') ) echo cn_social_icon(); ?>
 	</div>

@@ -165,7 +165,7 @@ $footer-background-color: #252523;
 		padding-top: 83px;
 		margin-bottom: 40px;
 
-		.main li {
+		#menu-footer-navigation-menu li {
 			a, a:hover, a:visited, a:link {
 				font-family: "CondensedCopy";
 
@@ -214,11 +214,11 @@ $footer-background-color: #252523;
 				padding-bottom: 32px;
 			}
 
-			.sub {
+			.sub-menu {
 				padding-bottom: 20px;
 			}
 
-			.sub li {
+			.sub-menu li {
 				a, a:hover, a:visited, a:link {
 					color: #ffffff;
 				}

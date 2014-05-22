@@ -49,6 +49,7 @@ add_action( 'wp_enqueue_scripts', 'datatrak_scripts' );
 
 function datatrak_register_theme_menu() {
 	register_nav_menu( 'primary', 'Main Navigation Menu' );
+	register_nav_menu( 'footer', 'Footer Navigation Menu' );
 }
 
 add_action( 'init', 'datatrak_register_theme_menu' );
