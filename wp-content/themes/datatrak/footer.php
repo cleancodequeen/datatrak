@@ -24,7 +24,7 @@ if( !defined( 'ABSPATH' ) ) {
 
 				<?php dynamic_sidebar( 'footer-widget' ); ?>
 
-			<?php endif; //end of colophon-widget ?>
+			<?php endif; ?>
 		</div>
 	</div>
 	<div id="footer">

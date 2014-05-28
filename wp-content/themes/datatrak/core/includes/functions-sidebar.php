@@ -24,8 +24,28 @@ if ( ! defined( 'WPINC' ) ) {
 function datatrak_widgets_init() {
 
 	register_sidebar( array(
+						  'name'          => __( 'Main Featured Widget', 'datatrak' ),
+						  'description'   => __( 'Area 0 - Main Featured article for landing page', 'datatrak' ),
+						  'id'            => 'main-featured-widget',
+						  'before_link'   => '<div class="widget-link"><div class="link-title">',
+						  'after_link'    => '</div><div class="arrow"></div></div>'
+					  ) );
+
+	register_sidebar( array(
+						  'name'          => __( 'Secondary Featured Widget', 'datatrak' ),
+						  'description'   => __( 'Area 1 - Secondary Featured articles for landing page', 'datatrak' ),
+						  'id'            => 'secondary-featured-widget'
+					  ) );
+
+	register_sidebar( array(
+						  'name'          => __( 'Landing Widget', 'datatrak' ),
+						  'description'   => __( 'Area 2 - Widget for links with icons featured on the landing page', 'datatrak' ),
+						  'id'            => 'landing-widget'
+					  ) );
+
+	register_sidebar( array(
 						  'name'          => __( 'Footer Widget', 'datatrak' ),
-						  'description'   => __( 'Area 0 - Latest News and Events from Datatrak', 'datatrak' ),
+						  'description'   => __( 'Area 3 - Latest News and Events from Datatrak', 'datatrak' ),
 						  'id'            => 'footer-widget',
 						  'before_title'  => '<div class="widget-title"><h5>',
 						  'after_title'   => '</h5></div>',

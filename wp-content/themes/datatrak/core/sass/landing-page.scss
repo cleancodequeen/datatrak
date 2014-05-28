@@ -1,0 +1,89 @@
+@import "compass";
+@import "compass/css3";
+
+#main-featured-widget {
+
+	width: 100%;
+
+	.feature-me .widget {
+		list-style-type: none;
+	}
+
+	.feature-me .featureme-thumb{
+	    width: 100%;
+	    height: auto;
+	}
+
+	.feature-me-link, .feature-me-link:active, .feature-me-link:hover, .feature-me-link:visited {
+		font-family: "CondensedCopy";
+		color: #ffffff;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 60px;
+		}
+
+		@media screen and (min-width: 768px) and (max-width: 1023px) {
+			font-size: 45px;
+		}
+
+		@media screen and (max-width: 767px) {
+			font-size: 30px;
+		}
+	}
+
+	.feature-me .widget-link {
+		width: 100%;
+		background-color: rgba(33, 38, 98, .9);
+		position: relative;
+
+		@media screen and (min-width: 1024px) {
+			height: 200px;
+			top: -203px;
+		}
+
+		@media screen and (min-width: 768px) and (max-width: 1023px) {
+			height: 150px;
+			top: -153px;
+		}
+
+		@media screen and (max-width: 767px) {
+			height: 125px;
+		}
+
+		.link-title {
+			width: 83.5%;
+			float: left;
+
+			@media screen and (min-width: 1024px) {
+				padding-top: 45px;
+				padding-left: 50px;
+			}
+
+			@media screen and (min-width: 768px) and (max-width: 1023px) {
+				padding-top: 34px;
+				padding-left: 38px;
+			}
+
+			@media screen and (max-width: 767px) {
+				padding-top: 22px;
+				padding-left: 25px;
+				width: 82.5%;
+			}
+		}
+
+		.arrow {
+			width: 10%;
+			float: left;
+			height: 100%;
+
+			@include background-image(image-url("promo-arrow.png"));
+
+			background: {
+  				repeat: no-repeat;
+  				position: center;
+  			};
+		}
+	}
+}

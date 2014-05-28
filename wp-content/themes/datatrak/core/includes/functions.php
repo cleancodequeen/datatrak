@@ -22,6 +22,13 @@ if ( !defined( 'ABSPATH' ) ) {
 <?php
 
 /**
+ * Add featured image support.
+ */
+
+
+add_theme_support( 'post-thumbnails' );
+
+/**
  * A safe way of adding stylesheets to a WordPress generated page.
  */
 
