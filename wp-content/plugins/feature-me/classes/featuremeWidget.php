@@ -122,6 +122,7 @@ class featuremeWidget extends WP_Widget
                         break;
                 }
 
+                echo $before_details;
 
                 if ($use_image == 't') { ?>
                     <a href="<?php if($type_url=="default"){ the_permalink();} else{ echo $linkURL;} ?>" title="<?php
@@ -131,6 +132,18 @@ class featuremeWidget extends WP_Widget
                     <?php the_post_thumbnail($instance->thumb_size, array('class' => 'featureme-thumb')); } ?></a>
 
                 <?php
+
+                echo $before_excerpt;
+
+                ?>
+
+                <a href="<?php if($type_url=="default"){ the_permalink();} else{ echo $linkURL;} ?>" title="<?php
+                echo
+                $title;
+                ?>">
+
+                <?php
+
                 switch ($copy) {
                     case 'excerpt':
                         the_excerpt();
@@ -142,16 +155,31 @@ class featuremeWidget extends WP_Widget
                         break;
                 }
 
+                ?>
+
+                </a>
+
+                <?php
+
+                echo $after_excerpt;
+
                 if($type_link != "none"): ?>
                 <a href="<?php if($type_url=="default"){ the_permalink();} else{ echo $linkURL;} ?>"
                       class="feature-me-link fmBtn"><?php echo $before_link; ?><?php echo $linkText; ?><?php echo $after_link; ?></a>
 
+                <?php echo $after_details; ?>
         <?php
             endif;
             endwhile;
             wp_reset_query();
             ?>
             <?php echo $after_widget; ?>
+            <a href="<?php if($type_url=="default"){ the_permalink();} else{ echo $linkURL;} ?>" title="<?php
+                echo
+                $title;
+                ?>">
+            <?php echo $after_li; ?>
+            </a>
         </article>
 
     <?php

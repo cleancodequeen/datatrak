@@ -30,14 +30,14 @@ get_header(); ?>
 
 		<?php endif; ?>
 	</div>
-<!-- 	<div id="secondary-featured-widget" class="group">
-		<?php //if( is_active_sidebar( 'secondary-featured-widget' ) ) : ?>
+	<div id="secondary-featured-widget" class="group">
+		<?php if( is_active_sidebar( 'secondary-featured-widget' ) ) : ?>
 
-			<?php //dynamic_sidebar( 'secondary-featured-widget' ); ?>
+			<?php dynamic_sidebar( 'secondary-featured-widget' ); ?>
 
-		<?php //endif; ?>
+		<?php endif; ?>
 	</div>
-	<div id="landing-widget" class="group">
+	<!-- <div id="landing-widget" class="group">
 		<?php //if( is_active_sidebar( 'landing-widget' ) ) : ?>
 
 			<?php //dynamic_sidebar( 'landing-widget' ); ?>

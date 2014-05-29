@@ -82,3 +82,133 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+#secondary-featured-widget {
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  #secondary-featured-widget {
+    margin-top: -20%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  #secondary-featured-widget {
+    margin-top: -17%;
+  }
+}
+@media screen and (max-width: 767px) {
+  #secondary-featured-widget {
+    margin-top: 0%;
+  }
+}
+#secondary-featured-widget article.feature-me {
+  margin-top: 50px;
+  width: 44%;
+  height: 175px;
+  background-color: #ffffff;
+}
+@media screen and (max-width: 1023px) {
+  #secondary-featured-widget article.feature-me {
+    width: 100%;
+    height: auto;
+  }
+}
+#secondary-featured-widget article.feature-me:first-child {
+  margin-left: 4.7%;
+  float: left;
+}
+@media screen and (max-width: 1023px) {
+  #secondary-featured-widget article.feature-me:first-child {
+    float: left;
+    margin-left: 0%;
+  }
+}
+#secondary-featured-widget article.feature-me:last-child {
+  margin-right: 4.7%;
+  float: right;
+}
+@media screen and (max-width: 1023px) {
+  #secondary-featured-widget article.feature-me:last-child {
+    float: left;
+    margin-left: 0%;
+  }
+}
+#secondary-featured-widget article.feature-me .widget {
+  list-style-type: none;
+  width: 87.7%;
+  float: left;
+  background-color: #ffffff;
+}
+#secondary-featured-widget article.feature-me .widget .widget-title {
+  width: 100%;
+  height: 65px;
+}
+#secondary-featured-widget article.feature-me .widget .widget-title a, #secondary-featured-widget article.feature-me .widget .widget-title a:hover, #secondary-featured-widget article.feature-me .widget .widget-title a:visited, #secondary-featured-widget article.feature-me .widget .widget-title a:link {
+  display: block;
+  width: 97%;
+  padding-left: 3%;
+  line-height: 300%;
+  font-family: "CondensedCopy";
+  color: #000000;
+  text-decoration: none;
+  font-size: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#secondary-featured-widget article.feature-me .widget .widget-details {
+  width: 100%;
+  height: 113px;
+  background-color: #ffffff;
+}
+#secondary-featured-widget article.feature-me .widget .widget-details a {
+  display: block;
+  float: left;
+  height: 113px;
+  margin-right: 3%;
+}
+#secondary-featured-widget article.feature-me .widget .widget-details a img {
+  width: 111px;
+  height: 113px;
+}
+#secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt {
+  height: 100%;
+}
+#secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:visited, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:hover, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:link {
+  font-family: "BodyCopy";
+  font-size: 15px;
+  color: #000000;
+  text-decoration: none;
+  float: none;
+}
+@media screen and (max-width: 767px) and (min-width: 476px) {
+  #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:visited, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:hover, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:link {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 475px) {
+  #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:visited, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:hover, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:link {
+    font-size: 12px;
+  }
+}
+#secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a p, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:visited p, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:hover p, #secondary-featured-widget article.feature-me .widget .widget-details .widget-excerpt a:link p {
+  padding-right: 3%;
+  line-height: 140%;
+}
+#secondary-featured-widget article.feature-me .arrow {
+  width: 12.3%;
+  height: 175px;
+  background-color: #212662;
+  float: left;
+  padding-bottom: 3px;
+  background-image: url('../images/promo-arrow.png?1401310716');
+  -webkit-background-size: 23%;
+  -moz-background-size: 23%;
+  -o-background-size: 23%;
+  background-size: 23%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#secondary-featured-widget article.feature-me:last-child .arrow {
+  background-color: #be1832;
+}

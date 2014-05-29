@@ -34,7 +34,14 @@ function datatrak_widgets_init() {
 	register_sidebar( array(
 						  'name'          => __( 'Secondary Featured Widget', 'datatrak' ),
 						  'description'   => __( 'Area 1 - Secondary Featured articles for landing page', 'datatrak' ),
-						  'id'            => 'secondary-featured-widget'
+						  'id'            => 'secondary-featured-widget',
+						  'before_title'  => '<div class="widget-title">',
+						  'after_title'   => '</div>',
+						  'before_details' => '<div class="widget-details">',
+						  'after_details' => '</div>',
+						  'after_li'      => '<div class="arrow"></div>',
+						  'before_excerpt'=> '<div class="widget-excerpt">',
+						  'after_excerpt' => '</div>'
 					  ) );
 
 	register_sidebar( array(
