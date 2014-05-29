@@ -174,6 +174,7 @@ class featuremeWidget extends WP_Widget
             wp_reset_query();
             ?>
             <?php echo $after_widget; ?>
+
             <a href="<?php if($type_url=="default"){ the_permalink();} else{ echo $linkURL;} ?>" title="<?php
                 echo
                 $title;

@@ -37,13 +37,13 @@ get_header(); ?>
 
 		<?php endif; ?>
 	</div>
-	<!-- <div id="landing-widget" class="group">
-		<?php //if( is_active_sidebar( 'landing-widget' ) ) : ?>
+	<div id="landing-widget" class="group">
+		<?php if( is_active_sidebar( 'landing-widget' ) ) : ?>
 
-			<?php //dynamic_sidebar( 'landing-widget' ); ?>
+			<?php dynamic_sidebar( 'landing-widget' ); ?>
 
-		<?php //endif; ?>
-	</div> -->
+		<?php endif; ?>
+	</div>
 
 </div>
 
