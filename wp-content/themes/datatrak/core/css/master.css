@@ -1119,3 +1119,65 @@ html, body {
 #secondary-featured-widget article.feature-me:last-child .arrow {
   background-color: #be1832;
 }
+
+#landing-widget .feature-me:nth-child(1) .widget .featured-icon {
+  background-image: url('../images/featured-icon-1.png?1401393895');
+}
+
+#landing-widget .feature-me:nth-child(2) .widget .featured-icon {
+  background-image: url('../images/featured-icon-2.png?1401393895');
+}
+
+#landing-widget .feature-me:nth-child(3) .widget .featured-icon {
+  background-image: url('../images/featured-icon-3.png?1401393895');
+}
+
+#landing-widget .feature-me:nth-child(4) .widget .featured-icon {
+  background-image: url('../images/featured-icon-4.png?1401393895');
+}
+
+#landing-widget .feature-me .widget {
+  margin-top: 88px;
+  list-style-type: none;
+  margin-left: 3.9%;
+  width: 200px;
+  float: left;
+}
+@media screen and (max-width: 767px) {
+  #landing-widget .feature-me .widget {
+    width: 50%;
+    margin-left: 25%;
+  }
+}
+#landing-widget .feature-me .widget .featured-icon {
+  margin: 0 auto 0 auto;
+  width: 108px;
+  height: 108px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#landing-widget .feature-me .widget .landing-widget-title a, #landing-widget .feature-me .widget .landing-widget-title a:hover, #landing-widget .feature-me .widget .landing-widget-title a:visited, #landing-widget .feature-me .widget .landing-widget-title a:link {
+  font-family: "CondensedCopy";
+  font-size: 34px;
+  color: #212662;
+  text-decoration: none;
+  margin-top: 44px;
+  line-height: 100%;
+}
+#landing-widget .feature-me .widget a, #landing-widget .feature-me .widget a:hover, #landing-widget .feature-me .widget a:visited, #landing-widget .feature-me .widget a:link {
+  color: #212662;
+  text-decoration: none;
+  line-height: 150%;
+}
+#landing-widget .feature-me .widget a {
+  display: block;
+  font-size: 16px;
+  font-family: "BodyCopy";
+  text-align: center;
+  width: 100%;
+  margin-top: 15px;
+}

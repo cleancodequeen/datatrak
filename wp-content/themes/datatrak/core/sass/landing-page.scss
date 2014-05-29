@@ -225,3 +225,79 @@
 			background-color: #be1832;
 	}
 }
+
+#landing-widget .feature-me:nth-child(1) .widget .featured-icon {
+	@include background-image(image-url("featured-icon-1.png"));
+}
+
+#landing-widget .feature-me:nth-child(2) .widget .featured-icon {
+	@include background-image(image-url("featured-icon-2.png"));
+}
+
+#landing-widget .feature-me:nth-child(3) .widget .featured-icon {
+	@include background-image(image-url("featured-icon-3.png"));
+}
+
+#landing-widget .feature-me:nth-child(4) .widget .featured-icon {
+	@include background-image(image-url("featured-icon-4.png"));
+}
+
+#landing-widget {
+
+	.feature-me {
+
+		.widget {
+			margin-top: 88px;
+			list-style-type: none;
+			margin-left: 3.9%;
+			width: 200px;
+			float: left;
+
+			@media screen and (max-width: 767px) {
+				width: 50%;
+				margin-left: 25%;
+			}
+
+			.featured-icon {
+				margin: 0 auto 0 auto;
+				width: 108px;
+				height: 108px;
+
+				@include background-size(cover);
+
+				background: {
+	  				repeat: no-repeat;
+	  				position: center;
+	  			};
+			}
+
+			.landing-widget-title {
+
+				a, a:hover, a:visited, a:link {
+					font-family: "CondensedCopy";
+					font-size: 34px;
+					color: #212662;
+					text-decoration: none;
+					margin-top: 44px;
+					line-height: 100%;
+				}
+			}
+
+			a, a:hover, a:visited, a:link {
+					
+					color: #212662;
+					text-decoration: none;
+					line-height: 150%;
+			}
+
+			a {
+				display: block;
+				font-size: 16px;
+				font-family: "BodyCopy";
+				text-align: center;
+				width: 100%;
+				margin-top: 15px;
+			}
+		}
+	}
+}
