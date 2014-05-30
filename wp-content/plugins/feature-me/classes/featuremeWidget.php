@@ -77,7 +77,7 @@ class featuremeWidget extends WP_Widget
         <article class="feature-me <?php echo $class; ?>">
             <?php echo $before_widget;
 
-            $the_feature = new WP_QUERY(array('p' => $feature, 'post_type' => array('post', 'page', 'company', 'events', 'markets', 'news', 'partners', 'products', 'resources', 'services', 'unified_experience', 'management_and_board', 'news', 'events'), 'posts_per_page' => '1'));
+            $the_feature = new WP_QUERY(array('p' => $feature, 'post_type' => array('post', 'page'), 'posts_per_page' => '1'));
 
             while ($the_feature->have_posts()):$the_feature->the_post();
 
@@ -227,7 +227,7 @@ class featuremeWidget extends WP_Widget
                     style="width:100%;" id="<?php echo $this->get_field_id('feature') ?>">
 
                 <option selected="selected" value="<?php echo esc_attr($instance['feature']); ?>"><?php
-                    $selected_feature = new WP_QUERY(array('p' => $featured_id, 'post_type' => array('post', 'page', 'company', 'events', 'markets', 'news', 'partners', 'products', 'resources', 'services', 'unified_experience', 'management_and_board', 'news', 'events'), 'posts_per_page' => '1'));
+                    $selected_feature = new WP_QUERY(array('p' => $featured_id, 'post_type' => array('post', 'page'), 'posts_per_page' => '1'));
                     while ($selected_feature->have_posts()): $selected_feature->the_post();
                         echo the_title();
                         if ($instance['type'] == "default") {
@@ -252,149 +252,12 @@ class featuremeWidget extends WP_Widget
                     wp_reset_query(); ?>
                 </optgroup>
 
-                <optgroup label="Unified Experience">
-                    <?php
-
-                    // UNIFIED EXPERIENCE
-
-                    $feature_list_pages = new WP_QUERY(array('posts_per_page' => '-1', 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'unified_experience'));
-                    while ($feature_list_pages->have_posts()): $feature_list_pages->the_post();
-                        ?>
-
-                        <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
-
-                    <?php endwhile;
-                    wp_reset_query(); ?>
-                </optgroup>
-
-                <optgroup label="Products">
-                    <?php
-
-                    // PRODUCTS
-
-                    $feature_list_pages = new WP_QUERY(array('posts_per_page' => '-1', 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'products'));
-                    while ($feature_list_pages->have_posts()): $feature_list_pages->the_post();
-                        ?>
-
-                        <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
-
-                    <?php endwhile;
-                    wp_reset_query(); ?>
-                </optgroup>
-
-                <optgroup label="Markets">
-                    <?php
-
-                    // MARKETS
-
-                    $feature_list_pages = new WP_QUERY(array('posts_per_page' => '-1', 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'markets'));
-                    while ($feature_list_pages->have_posts()): $feature_list_pages->the_post();
-                        ?>
-
-                        <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
-
-                    <?php endwhile;
-                    wp_reset_query(); ?>
-                </optgroup>
-
-                <optgroup label="Services">
-                    <?php
-
-                    // SERVICES
-
-                    $feature_list_pages = new WP_QUERY(array('posts_per_page' => '-1', 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'services'));
-                    while ($feature_list_pages->have_posts()): $feature_list_pages->the_post();
-                        ?>
-
-                        <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
-
-                    <?php endwhile;
-                    wp_reset_query(); ?>
-                </optgroup>
-
-                <optgroup label="Resources">
-                    <?php
-
-                    // RESOURCES
-
-                    $feature_list_pages = new WP_QUERY(array('posts_per_page' => '-1', 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'resources'));
-                    while ($feature_list_pages->have_posts()): $feature_list_pages->the_post();
-                        ?>
-
-                        <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
-
-                    <?php endwhile;
-                    wp_reset_query(); ?>
-                </optgroup>
-
-                <optgroup label="Partners">
-                    <?php
-
-                    // PARTNERS
-
-                    $feature_list_pages = new WP_QUERY(array('posts_per_page' => '-1', 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'management_and_board'));
-                    while ($feature_list_pages->have_posts()): $feature_list_pages->the_post();
-                        ?>
-
-                        <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
-
-                    <?php endwhile;
-                    wp_reset_query(); ?>
-                </optgroup>
-
-                <optgroup label="Company">
-                    <?php
-
-                    // COMPANY
-
-                    $feature_list_pages = new WP_QUERY(array('posts_per_page' => '-1', 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'company'));
-                    while ($feature_list_pages->have_posts()): $feature_list_pages->the_post();
-                        ?>
-
-                        <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
-
-                    <?php endwhile;
-                    wp_reset_query(); ?>
-                </optgroup>
-
                 <optgroup label="Posts">
                     <?php
 
                     // POSTS
 
                     $feature_list_posts = new WP_QUERY(array('posts_per_page' => '-1', 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'post'));
-
-                    while ($feature_list_posts->have_posts()): $feature_list_posts->the_post();
-                        ?>
-
-                        <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
-
-                    <?php endwhile;
-                    wp_reset_query(); ?>
-                </optgroup>
-
-                <optgroup label="News">
-                    <?php
-
-                    // NEWS
-
-                    $feature_list_posts = new WP_QUERY(array('posts_per_page' => '-1', 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'news'));
-
-                    while ($feature_list_posts->have_posts()): $feature_list_posts->the_post();
-                        ?>
-
-                        <option value="<?php echo the_ID(); ?>"><?php echo the_title(); ?></option>
-
-                    <?php endwhile;
-                    wp_reset_query(); ?>
-                </optgroup>
-
-                <optgroup label="Events">
-                    <?php
-
-                    // EVENTS
-
-                    $feature_list_posts = new WP_QUERY(array('posts_per_page' => '-1', 'orderby' => 'title', 'order' => 'ASC', 'post_type' => 'events'));
 
                     while ($feature_list_posts->have_posts()): $feature_list_posts->the_post();
                         ?>
