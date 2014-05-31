@@ -84,15 +84,15 @@
 .menu-main #menu-default-navigation-menu li {
   float: left;
   height: 35px;
-  padding-left: 2.6%;
-  padding-right: 2.6%;
+  padding-left: 3%;
+  padding-right: 3%;
   margin-top: 14px;
   letter-spacing: 1px;
   padding-top: 21px;
 }
 .menu-main #menu-default-navigation-menu li a, .menu-main #menu-default-navigation-menu li a:visited, .menu-main #menu-default-navigation-menu li a:link, .menu-main #menu-default-navigation-menu li a:active {
   color: #365064;
-  font-family: "BoldCopy";
+  font-family: "CondensedCopy";
   text-decoration: none;
   text-transform: uppercase;
 }

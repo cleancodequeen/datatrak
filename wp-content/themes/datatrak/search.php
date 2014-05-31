@@ -21,7 +21,13 @@ if( !defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
+<?php the_breadcrumb(); ?>
+
 <div id="content-search" class="">
+
+	<?php if( is_search() ) {
+		echo "this is a search";
+	} ?>
 
 	<?php if( have_posts() ) : ?>
 

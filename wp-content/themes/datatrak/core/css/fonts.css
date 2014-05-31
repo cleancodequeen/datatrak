@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: "ThinCopy";
+  src: url('../fonts/UniversLTStd-Light.otf') format('opentype');
+}
+
+@font-face {
   font-family: "CondensedCopy";
   src: url('../fonts/UniversLTStd-Cn.otf') format('opentype');
 }

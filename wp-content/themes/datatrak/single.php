@@ -21,6 +21,8 @@ if( !defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
+<?php the_breadcrumb(); ?>
+
 <div id="page">
 i'm a the single!
 </div>

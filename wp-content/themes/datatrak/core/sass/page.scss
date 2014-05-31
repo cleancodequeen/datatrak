@@ -1,0 +1,111 @@
+@import "compass";
+@import "compass/css3";
+
+#page {
+	width: 100%;
+	background-color: #ffffff;
+
+	.full {
+		padding-top: 56px;
+
+		@media screen and (max-width: 767px) {
+			padding-top: 28px;
+		}
+
+		.page-copy {
+			width: 70.7%;
+			margin-left: 3%;
+
+			@media screen and (max-width: 767px) {
+				width: 94%;
+			}
+		}
+
+		.page-title {
+
+			h2 {
+				color: #000000;
+				font-family: "ThinCopy";
+				font-weight: bold;
+				font-size: 67px;
+
+				@media screen and (max-width: 767px) {
+					font-size: 34px;
+				}
+			}
+
+			padding-bottom: 20px;
+
+			@media screen and (max-width: 767px) {
+				padding-bottom: 14px;
+			}
+			
+		}
+
+		.page-subtitle {
+
+			h4 {
+				color: #000000;
+				font-family: "ThinCopy";
+				font-size: 36px;
+
+				@media screen and (max-width: 767px) {
+					font-size: 18px;
+				}
+			}
+
+			padding-bottom: 20px;
+
+			@media screen and (max-width: 767px) {
+				padding-bottom: 5px;
+			}
+		}
+
+		.page-content {
+			width: 97%;
+			padding-left: 3%;
+			overflow: hidden;
+			padding-top: 10px;
+			padding-bottom: 60px;
+
+			@media screen and (max-width: 767px) {
+				padding-bottom: 20px;
+				padding-top: 0px;
+			}
+
+			p {
+				font-family: "ThinCopy";
+				font-size: 15px;
+				color: #000000;
+				width: 73%;
+				padding-top: 30px;
+				line-height: 170%;
+
+				@media screen and (max-width: 767px) {
+					width: 97%;
+				}
+			}
+
+			p img {
+				margin-left: -3.1%;
+				padding-bottom: 40px;
+				width: auto;
+
+				@media screen and (max-width: 1023px) {
+					margin-left: -4.5%;
+				}
+
+				@media screen and (max-width: 767px) {
+					padding-bottom: 20px;
+					width: 767px;
+					height: auto;
+				}
+			}
+
+			p strong {
+				font-family: "BodyCopy";
+				font-weight: bold;
+			}
+		}
+	}
+}

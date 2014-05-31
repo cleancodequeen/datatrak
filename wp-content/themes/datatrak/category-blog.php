@@ -6,7 +6,7 @@ if( !defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Search Template
+ * Blog Category Template
  *
  *
  * @file           search.php
@@ -20,6 +20,8 @@ if( !defined( 'ABSPATH' ) ) {
  */
 
 get_header(); ?>
+
+<?php the_breadcrumb(); ?>
 
 <div id="content-search" class="">
 

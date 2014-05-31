@@ -94,14 +94,14 @@
     display: block;
   }
   .menu-main #menu-default-navigation-menu li {
-    padding-left: 2.6%;
-    padding-right: 2.6%;
+    padding-left: 3%;
+    padding-right: 3%;
   }
   .menu-main #menu-default-navigation-menu li a, .menu-main #menu-default-navigation-menu li a:visited, .menu-main #menu-default-navigation-menu li a:link, .menu-main #menu-default-navigation-menu li a:active {
     font-size: 15px;
   }
   .menu-main #menu-default-navigation-menu li:last-child {
-    padding-right: 2.5%;
+    padding-right: 3.3%;
     float: right;
     position: absolute;
     top: 0;

@@ -21,8 +21,32 @@ if( !defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
-<div id="page">
-i'm the page!
+<?php the_breadcrumb(); ?>
+
+<div id="page" class="content">
+	<?php if( have_posts() ) : ?>
+		<div class="copy full">
+		<?php while( have_posts() ) : the_post(); ?>
+
+			<?php get_template_part( 'loop-header' ); ?>
+
+			<div id="post-<?php the_ID(); ?>" <?php post_class('page-content'); ?>>
+				
+				<?php the_content( __( 'Read more &#8250;', 'datatrak' ) ); ?>
+
+			</div><!-- end of #post-<?php the_ID(); ?> -->
+
+		<?php
+		endwhile;
+		?>
+		</div>
+	<?php
+	else :
+
+		//get_template_part( 'loop-no-posts' );
+
+	endif;
+	?>
 </div>
 
 <?php get_footer(); ?>
