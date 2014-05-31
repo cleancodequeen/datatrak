@@ -5,6 +5,12 @@
 	width: 100%;
 	background-color: #ffffff;
 
+	a,  a:hover,  a:active,  a:link,  a:visited {
+		color: #be1832;
+		font-family: "BodyCopy";
+		text-decoration: none;
+	}
+
 	.full {
 		padding-top: 56px;
 
@@ -106,6 +112,39 @@
 			p strong {
 				font-family: "BodyCopy";
 				font-weight: bold;
+			}
+
+			ul {
+				list-style-type: disc;
+				padding-top: 30px;
+			}
+
+			ol {
+				list-style-type: decimal;
+				padding-top: 30px;
+			}
+
+			ul li, ol li {
+				margin-left: 1.8%;
+				font-family: "ThinCopy";
+				font-size: 15px;
+				color: #000000;
+				width: 70%;
+				line-height: 170%;
+
+				@media screen and (max-width: 767px) {
+					margin-left: 4.8%;
+				}
+
+				ul, ol {
+					padding-top: 10px;
+
+					li {
+						margin-left: 10.8%;
+						width: 90%;
+					}
+				}
+
 			}
 		}
 	}
