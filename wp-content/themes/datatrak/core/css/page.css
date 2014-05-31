@@ -77,7 +77,7 @@
   padding-top: 30px;
   line-height: 170%;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   #page .full .page-content p {
     width: 97%;
   }
@@ -89,13 +89,14 @@
 }
 @media screen and (max-width: 1023px) {
   #page .full .page-content p img {
-    margin-left: -4.5%;
+    width: 100%;
+    height: auto;
   }
 }
 @media screen and (max-width: 767px) {
   #page .full .page-content p img {
     padding-bottom: 20px;
-    width: 767px;
+    width: 100%;
     height: auto;
   }
 }

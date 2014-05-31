@@ -81,7 +81,7 @@
 				padding-top: 30px;
 				line-height: 170%;
 
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: 1023px) {
 					width: 97%;
 				}
 			}
@@ -92,12 +92,13 @@
 				width: auto;
 
 				@media screen and (max-width: 1023px) {
-					margin-left: -4.5%;
+					width: 100%;
+					height: auto;
 				}
 
 				@media screen and (max-width: 767px) {
 					padding-bottom: 20px;
-					width: 767px;
+					width: 100%;
 					height: auto;
 				}
 			}
