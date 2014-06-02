@@ -7,61 +7,75 @@
   font-family: "BodyCopy";
   text-decoration: none;
 }
-#page .full {
+#page .copy {
   padding-top: 56px;
+  float: left;
 }
 @media screen and (max-width: 767px) {
-  #page .full {
+  #page .copy {
     padding-top: 28px;
   }
 }
-#page .full .page-copy {
+#page .copy.full {
+  width: 100%;
+}
+#page .copy.partial {
+  width: 74%;
+  border-right: solid 1px #d3d3d3;
+}
+@media screen and (max-width: 767px) {
+  #page .copy.partial {
+    width: 100%;
+    border-right: none;
+  }
+}
+#page .copy .page-copy {
   width: 70.7%;
   margin-left: 3%;
 }
 @media screen and (max-width: 767px) {
-  #page .full .page-copy {
+  #page .copy .page-copy {
     width: 94%;
   }
 }
-#page .full .page-title {
+#page .copy .page-title {
   padding-bottom: 20px;
 }
-#page .full .page-title h2 {
+#page .copy .page-title h2 {
   color: #000000;
   font-family: "ThinCopy";
   font-weight: bold;
   font-size: 67px;
 }
 @media screen and (max-width: 767px) {
-  #page .full .page-title h2 {
+  #page .copy .page-title h2 {
     font-size: 34px;
   }
 }
 @media screen and (max-width: 767px) {
-  #page .full .page-title {
+  #page .copy .page-title {
     padding-bottom: 14px;
   }
 }
-#page .full .page-subtitle {
+#page .copy .page-subtitle {
   padding-bottom: 20px;
 }
-#page .full .page-subtitle h4 {
+#page .copy .page-subtitle h4 {
   color: #000000;
   font-family: "ThinCopy";
   font-size: 36px;
 }
 @media screen and (max-width: 767px) {
-  #page .full .page-subtitle h4 {
+  #page .copy .page-subtitle h4 {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 767px) {
-  #page .full .page-subtitle {
+  #page .copy .page-subtitle {
     padding-bottom: 5px;
   }
 }
-#page .full .page-content {
+#page .copy .page-content {
   width: 97%;
   padding-left: 3%;
   overflow: hidden;
@@ -69,12 +83,12 @@
   padding-bottom: 60px;
 }
 @media screen and (max-width: 767px) {
-  #page .full .page-content {
+  #page .copy .page-content {
     padding-bottom: 20px;
     padding-top: 0px;
   }
 }
-#page .full .page-content p {
+#page .copy .page-content p {
   font-family: "ThinCopy";
   font-size: 15px;
   color: #000000;
@@ -83,41 +97,41 @@
   line-height: 170%;
 }
 @media screen and (max-width: 1023px) {
-  #page .full .page-content p {
+  #page .copy .page-content p {
     width: 97%;
   }
 }
-#page .full .page-content p img {
-  margin-left: -3.1%;
+#page .copy .page-content p img {
+  margin-left: -4.1%;
   padding-bottom: 40px;
   width: auto;
 }
 @media screen and (max-width: 1023px) {
-  #page .full .page-content p img {
+  #page .copy .page-content p img {
     width: 100%;
     height: auto;
   }
 }
 @media screen and (max-width: 767px) {
-  #page .full .page-content p img {
+  #page .copy .page-content p img {
     padding-bottom: 20px;
     width: 100%;
     height: auto;
   }
 }
-#page .full .page-content p strong {
+#page .copy .page-content p strong {
   font-family: "BodyCopy";
   font-weight: bold;
 }
-#page .full .page-content ul {
+#page .copy .page-content ul {
   list-style-type: disc;
   padding-top: 30px;
 }
-#page .full .page-content ol {
+#page .copy .page-content ol {
   list-style-type: decimal;
   padding-top: 30px;
 }
-#page .full .page-content ul li, #page .full .page-content ol li {
+#page .copy .page-content ul li, #page .copy .page-content ol li {
   margin-left: 1.8%;
   font-family: "ThinCopy";
   font-size: 15px;
@@ -126,14 +140,109 @@
   line-height: 170%;
 }
 @media screen and (max-width: 767px) {
-  #page .full .page-content ul li, #page .full .page-content ol li {
+  #page .copy .page-content ul li, #page .copy .page-content ol li {
     margin-left: 4.8%;
   }
 }
-#page .full .page-content ul li ul, #page .full .page-content ul li ol, #page .full .page-content ol li ul, #page .full .page-content ol li ol {
+#page .copy .page-content ul li ul, #page .copy .page-content ul li ol, #page .copy .page-content ol li ul, #page .copy .page-content ol li ol {
   padding-top: 10px;
 }
-#page .full .page-content ul li ul li, #page .full .page-content ul li ol li, #page .full .page-content ol li ul li, #page .full .page-content ol li ol li {
+#page .copy .page-content ul li ul li, #page .copy .page-content ul li ol li, #page .copy .page-content ol li ul li, #page .copy .page-content ol li ol li {
   margin-left: 10.8%;
   width: 90%;
+}
+#page .sidebar {
+  width: 25.8%;
+  float: left;
+}
+@media screen and (max-width: 767px) {
+  #page .sidebar {
+    width: 100%;
+    padding-top: 28px;
+  }
+}
+#page .sidebar .sidebar-social {
+  border-bottom: solid 1px #d3d3d3;
+  padding-top: 45px;
+  padding-bottom: 36px;
+}
+#page .sidebar .sidebar-social .cnss_sidebar-social-icon {
+  margin: 0 auto 0 auto !important;
+}
+#page .sidebar .sidebar-social .cnss_sidebar-social-icon tbody tr td {
+  padding-left: 12px !important;
+}
+@media screen and (max-width: 767px) {
+  #page .sidebar .sidebar-social .cnss_sidebar-social-icon tbody tr td {
+    padding-left: 0 !important;
+  }
+}
+#page .sidebar .cta {
+  width: 100%;
+  border-bottom: solid 1px #d3d3d3;
+  padding-top: 19px;
+  padding-bottom: 35px;
+}
+@media screen and (max-width: 767px) {
+  #page .sidebar .cta {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+}
+#page .sidebar .cta:last-child {
+  border-bottom: none;
+}
+#page .sidebar .cta a, #page .sidebar .cta a:visited, #page .sidebar .cta a:hover, #page .sidebar .cta a:link {
+  color: #ffffff;
+  font-family: "BodyCopy";
+  font-size: 15px;
+}
+#page .sidebar .cta a .cta-btn.third, #page .sidebar .cta a:visited .cta-btn.third, #page .sidebar .cta a:hover .cta-btn.third, #page .sidebar .cta a:link .cta-btn.third {
+  color: #1d2a79;
+}
+#page .sidebar .cta .cta-btn {
+  width: 85.2%;
+  margin-left: 7%;
+  background-repeat: no-repeat;
+  background-position: 92% 50%;
+}
+#page .sidebar .cta .cta-btn.first {
+  background-color: #c51a27;
+  background-image: url('../images/sidebar-cta-arrow-first.png?1401692757');
+}
+#page .sidebar .cta .cta-btn.second {
+  background-color: #1d2a79;
+  background-image: url('../images/sidebar-cta-arrow-second.png?1401692827');
+}
+#page .sidebar .cta .cta-btn.third {
+  background-color: #eeeeee;
+  background-image: url('../images/sidebar-cta-arrow-third.png?1401692892');
+}
+#page .sidebar .cta .cta-btn h4 {
+  width: 76%;
+  padding-left: 7.8%;
+  padding-top: 24px;
+  padding-bottom: 19px;
+}
+@media screen and (max-width: 767px) {
+  #page .sidebar .cta .cta-btn {
+    margin: 0 auto 0 auto;
+    width: 70%;
+  }
+}
+#page .sidebar .cta h6 {
+  width: 85.2%;
+  color: #1d2a79;
+  font-size: 15px;
+  font-family: "BodyCopy";
+  margin-left: 7%;
+  padding-top: 16px;
+  line-height: 140%;
+}
+@media screen and (max-width: 767px) {
+  #page .sidebar .cta h6 {
+    margin: 0 auto 0 auto;
+    width: 70%;
+    text-align: center;
+  }
 }
