@@ -9,6 +9,7 @@
 		color: #be1832;
 		font-family: "BodyCopy";
 		text-decoration: none;
+		display: block;
 	}
 
 	.copy {
@@ -112,7 +113,6 @@
 
 			p img {
 				margin-left: -4.1%;
-				padding-bottom: 40px;
 				width: auto;
 
 				@media screen and (max-width: 1023px) {
@@ -130,6 +130,10 @@
 			p strong {
 				font-family: "BodyCopy";
 				font-weight: bold;
+			}
+
+			p em {
+				font-style: italic;
 			}
 
 			ul {

@@ -6,6 +6,7 @@
   color: #be1832;
   font-family: "BodyCopy";
   text-decoration: none;
+  display: block;
 }
 #page .copy {
   padding-top: 56px;
@@ -103,7 +104,6 @@
 }
 #page .copy .page-content p img {
   margin-left: -4.1%;
-  padding-bottom: 40px;
   width: auto;
 }
 @media screen and (max-width: 1023px) {
@@ -122,6 +122,9 @@
 #page .copy .page-content p strong {
   font-family: "BodyCopy";
   font-weight: bold;
+}
+#page .copy .page-content p em {
+  font-style: italic;
 }
 #page .copy .page-content ul {
   list-style-type: disc;
