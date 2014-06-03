@@ -44,7 +44,7 @@ get_header(); ?>
 	?>
 	<nav class="team-members">
 		<div class="header">
-			<h2><?php echo __( 'MANAGEMENT TEAM', 'datatrak' ); ?></h2>
+			<h2><?php echo the_title(); ?></h2>
 		</div>
 		<div class="items group">
 			<ul>
@@ -64,6 +64,21 @@ get_header(); ?>
 			</ul>
 		</div>
 	</nav>
+	<div class="bios">
+	<?php 
+		$first = true;
+		foreach ( $team_posts as $post ): 
+	?>
+		<div class="bio-container <?php if ($first) echo 'active'; $first = false; ?>">
+		<?php
+			setup_postdata($post);
+		?>
+			<div class="photo" style="background-image: url(<?php echo the_field('management_photo');?>);"></div>
+			<h4><?php echo the_title(); ?>, <?php echo the_field('management_position'); ?></h4>
+			<?php the_content(); ?>
+		</div>
+	<?php endforeach; ?>
+	</div>
 	<?php endif; ?>
 </div>
 

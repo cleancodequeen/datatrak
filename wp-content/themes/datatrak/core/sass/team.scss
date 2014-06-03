@@ -3,10 +3,11 @@
 
 #management {
 	width: 100%;
-	background-color: #ffffff;
 
 	.team-members {
 		width: 100%;
+		background-color: #ffffff;
+		margin-bottom: 31px;
 
 		.header {
 			width: 100%;
@@ -24,6 +25,7 @@
 				font-family: "CondensedCopy";
 				padding-left: 4%;
 				line-height: 300%;
+				text-transform: uppercase;
 
 				@media screen and (max-width: 767px) {
 					 font-size: 32px;
@@ -127,4 +129,90 @@
 		}
 	}
 
+	.bios {
+		position: relative;
+
+		height: 2000px;
+		background-color: #ffffff;
+
+		.bio-container {
+			width: 100%;
+			height: 100%;
+			background-color: #ffffff;
+			position: absolute;
+			top: 0;
+
+			opacity: 0;
+
+			&.active {
+				opacity: 1;
+			}
+
+			.photo {
+				margin-top: 47px;
+				margin-left: 3%;
+				float: left;
+				width: 255px;
+				height: 255px;
+
+				@include background-size(cover);
+
+				background: {
+		  			repeat: no-repeat;
+		  			position: 50% 0%;
+		  		};
+
+		  		@include border-radius(100%);
+
+		  		border: solid 8px #f2f2f2;
+
+		  		@include box-shadow(rgba(#000000, 0.09) 0 0 3px 1px inset);
+
+		  		@media screen and (max-width: 767px) {
+					margin-left: auto;
+					margin-right: auto;
+					float: none;
+				}
+			}
+
+			h4 {
+				font-family: "BodyCopy";
+				font-size: 32px;
+				color: #d22448;
+				float: left;
+				width: 48%;
+				padding-left: 3%;
+				padding-top: 47px;
+				line-height: 150%;
+
+				@media screen and (max-width: 767px) {
+					padding-left: 0%;
+					text-align: center;
+					width: 80%;
+					float: none;
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+
+			p {
+				width: 63%;
+				font-family: "ThinCopy";
+				font-size: 15px;
+				color: #000000;
+				float: left;
+				line-height: 150%;
+				padding-left: 3%;
+				padding-top: 34px;
+
+				@media screen and (max-width: 767px) {
+					padding-left: 0%;
+					width: 80%;
+					margin-left: auto;
+					margin-right: auto;
+					float: none;
+				}
+			}
+		}
+	}
 }
