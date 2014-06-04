@@ -1,14 +1,14 @@
 <?php
 /**
- * Manager profiles
+ * Board Members profiles
  *
- * Create a "Managers Team" page in WordPress using 
+ * Create a "Board Members" page in WordPress using 
  * custom post types, taxonomies, and Advanced Custom
  * Fields
  */
-if ( !class_exists('ManagerProfiles') ):
+if ( !class_exists('BoardProfiles') ):
 
-class ManagerProfiles
+class BoardProfiles
 {
 	/**
 	 * Initialize & hook into WP
@@ -55,7 +55,7 @@ class ManagerProfiles
 		// Display message
 		$install_link = admin_url('plugin-install.php?tab=search&type=term&s=Advanced+Custom+Fields&plugin-search-input=Search+Plugins');
 		$html =  '<div class="error"><p>';
-		$html .= '<strong>Manager Profiles</strong> needs the <a href="http://www.advancedcustomfields.com/" target="_blank">Advanced Custom Fields</a> plugin to work. Please <a href="' . $install_link . '">install it now</a>.';
+		$html .= '<strong>Board Members Profiles</strong> needs the <a href="http://www.advancedcustomfields.com/" target="_blank">Advanced Custom Fields</a> plugin to work. Please <a href="' . $install_link . '">install it now</a>.';
 		$html .= '</p></div>';
 		
 		echo $html;
@@ -69,22 +69,22 @@ class ManagerProfiles
 	   
 	   // Labels
 		$labels = array(
-			'name' => _x("Managers", "post type general name"),
-			'singular_name' => _x("Manager", "post type singular name"),
-			'menu_name' => 'Manager Profiles',
-			'add_new' => _x("Add New", "manager item"),
-			'add_new_item' => __("Add New Manager"),
-			'edit_item' => __("Edit Manager"),
-			'new_item' => __("New Manager"),
-			'view_item' => __("View Manager"),
-			'search_items' => __("Search Managers"),
-			'not_found' =>  __("No Managers Found"),
-			'not_found_in_trash' => __("No Managers Found in Trash"),
+			'name' => _x("Board Members", "post type general name"),
+			'singular_name' => _x("Member", "post type singular name"),
+			'menu_name' => 'Member Profiles',
+			'add_new' => _x("Add New", "member item"),
+			'add_new_item' => __("Add New Member"),
+			'edit_item' => __("Edit Member"),
+			'new_item' => __("New Member"),
+			'view_item' => __("View Member"),
+			'search_items' => __("Search Members"),
+			'not_found' =>  __("No Members Found"),
+			'not_found_in_trash' => __("No Members Found in Trash"),
 			'parent_item_colon' => ''
 		);
 		
 		// Register post type
-		register_post_type('manager' , array(
+		register_post_type('board_member' , array(
 			'labels' => $labels,
 			'public' => true,
 			'has_archive' => false,
@@ -108,7 +108,7 @@ class ManagerProfiles
 
 		   // Get 'team' posts
 			$team_posts = get_posts( array(
-				'post_type' => 'manager',
+				'post_type' => 'board_member',
 				'posts_per_page' => -1, // Unlimited posts
 				'orderby' => 'menu_order', // Order alphabetically by name
 				'order' => 'ASC',
@@ -134,9 +134,15 @@ class ManagerProfiles
 						<?php
 						setup_postdata($post);
 						?>
-						<div class="photo" style="background-image: url(<?php echo the_field('management_photo');?>);"></div>
+						<div class="photo" style="background-image: url(<?php echo the_field('board_member_photo');?>);"></div>
+						<?php 
+						if ( get_field('board_member_position') ) { 
+						?>
 						<h6><?php echo the_title(); ?>,</h6>
-						<h6><?php echo the_field('management_position'); ?></h6>
+						<h6><?php echo the_field('board_member_position'); ?></h6>
+						<?php } else { ?>
+						<h6><?php echo the_title(); ?></h6>
+						<?php } ?>
 						</li>
 				<?php endforeach; ?>
 					</ul>
@@ -151,8 +157,14 @@ class ManagerProfiles
 				<?php
 					setup_postdata($post);
 				?>
-					<div class="photo" style="background-image: url(<?php echo the_field('management_photo');?>);"></div>
-					<h4><?php echo the_title(); ?>, <?php echo the_field('management_position'); ?></h4>
+					<div class="photo" style="background-image: url(<?php echo the_field('board_member_photo');?>);"></div>
+					<?php 
+					if ( get_field('board_member_position') ) { 
+					?>
+					<h4><?php echo the_title(); ?>, <?php echo the_field('board_member_position'); ?></h4>
+					<?php } else { ?>
+					<h4><?php echo the_title(); ?></h4>
+					<?php } ?>
 					<?php the_content(); ?>
 				</div>
 			<?php endforeach; ?>
@@ -173,6 +185,6 @@ class ManagerProfiles
 	}
 }
 
-$ManagerProfiles = new ManagerProfiles();
+$BoardProfiles = new BoardProfiles();
 
 endif;

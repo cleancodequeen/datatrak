@@ -1,7 +1,7 @@
 @import "compass";
 @import "compass/css3";
 
-#management {
+#management, #board-members {
 	width: 100%;
 
 	.team-members {
@@ -130,22 +130,25 @@
 	}
 
 	.bios {
-		position: relative;
+		//position: relative;
 
-		height: 2000px;
 		background-color: #ffffff;
+		padding-bottom: 30px;
 
 		.bio-container {
 			width: 100%;
 			height: 100%;
 			background-color: #ffffff;
-			position: absolute;
-			top: 0;
+			//position: absolute;
+			//top: 0;
+			float: left;
 
-			opacity: 0;
+			//opacity: 0;
+			display: none;
 
 			&.active {
-				opacity: 1;
+				//opacity: 1;
+				display: block;
 			}
 
 			.photo {
@@ -215,4 +218,8 @@
 			}
 		}
 	}
+}
+
+#board-members .team-members .items ul li {
+	height: 200px;
 }

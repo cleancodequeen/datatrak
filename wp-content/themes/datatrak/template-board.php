@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Management
+ * Template Name: Board Members
  */
 
 // Exit if accessed directly
@@ -10,16 +10,16 @@ if( !defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Management Template
+ * Board Template
  *
  *
- * @file           template-management.php
+ * @file           template-board.php
  * @package        Datatrak
  * @author         Andrew Nida
  * @copyright      2014 Fig Company
  * @license        license.txt
  * @version        Release: 1.0
- * @filesource     wp-content/themes/datatrak/template-management.php
+ * @filesource     wp-content/themes/datatrak/template-board.php
  * @since          available since Release 1.0
  */
 
@@ -27,14 +27,14 @@ get_header(); ?>
 
 <?php the_breadcrumb(); ?>
 
-<div id="management" class="team">
+<div id="board-members" class="team">
 
 <?php 
 	the_post();
 
 	// Get 'team' posts
 	$team_posts = get_posts( array(
-		'post_type' => 'manager',
+		'post_type' => 'board_member',
 		'posts_per_page' => -1, // Unlimited posts
 		'orderby' => 'menu_order', // Order alphabetically by name
 		'order' => 'ASC',
@@ -56,9 +56,15 @@ get_header(); ?>
 				<?php
 				setup_postdata($post);
 				?>
-				<div class="photo" style="background-image: url(<?php echo the_field('management_photo');?>);"></div>
+				<div class="photo" style="background-image: url(<?php echo the_field('board_member_photo');?>);"></div>
+				<?php 
+				if ( get_field('board_member_position') ) { 
+				?>
 				<h6><?php echo the_title(); ?>,</h6>
-				<h6><?php echo the_field('management_position'); ?></h6>
+				<h6><?php echo the_field('board_member_position'); ?></h6>
+				<?php } else { ?>
+				<h6><?php echo the_title(); ?></h6>
+				<?php } ?>
 				</li>
 		<?php endforeach; ?>
 			</ul>
@@ -73,8 +79,14 @@ get_header(); ?>
 		<?php
 			setup_postdata($post);
 		?>
-			<div class="photo" style="background-image: url(<?php echo the_field('management_photo');?>);"></div>
-			<h4><?php echo the_title(); ?>, <?php echo the_field('management_position'); ?></h4>
+			<div class="photo" style="background-image: url(<?php echo the_field('board_member_photo');?>);"></div>
+			<?php 
+			if ( get_field('board_member_position') ) { 
+			?>
+			<h4><?php echo the_title(); ?>, <?php echo the_field('board_member_position'); ?></h4>
+			<?php } else { ?>
+			<h4><?php echo the_title(); ?></h4>
+			<?php } ?>
 			<?php the_content(); ?>
 		</div>
 	<?php endforeach; ?>

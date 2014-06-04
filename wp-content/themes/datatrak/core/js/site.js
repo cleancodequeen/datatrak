@@ -37,9 +37,35 @@
 		});
 	}
 
+	datatrak.initManagementMenu = function() {
+		$j('#management .team-members .items ul li').click(function() {
+			$j('#management .team-members .items ul li').removeClass('active');
+			$j(this).addClass('active');
+
+			$j('#management .bios .bio-container').removeClass('active');
+
+			var newBio = $j('#management .bios .bio-container')[$j(this).index()];
+			$j(newBio).addClass('active');
+		});
+	}
+
+	datatrak.initBoardMembersMenu = function() {
+		$j('#board-members .team-members .items ul li').click(function() {
+			$j('#board-members .team-members .items ul li').removeClass('active');
+			$j(this).addClass('active');
+
+			$j('#board-members .bios .bio-container').removeClass('active');
+
+			var newBio = $j('#board-members .bios .bio-container')[$j(this).index()];
+			$j(newBio).addClass('active');
+		});
+	}
+
 	$j(document).ready(function() {
 
 		datatrak.initMainMenu();
 		datatrak.initMobileMenu();
+		datatrak.initManagementMenu();
+		datatrak.initBoardMembersMenu();
 	});
 })();
