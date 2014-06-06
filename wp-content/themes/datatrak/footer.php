@@ -35,7 +35,8 @@ if( !defined( 'ABSPATH' ) ) {
 					'theme_location' => 'footer',
 					'container' => false,
 					'depth' => 0,
-					'walker' => new Footer_Site_Map()
+					'walker' => new Footer_Site_Map(),
+					'menu_class'      => 'group'
 				)
 			);
 		?>

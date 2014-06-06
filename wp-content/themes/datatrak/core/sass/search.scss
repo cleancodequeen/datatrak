@@ -1,0 +1,58 @@
+@import "compass";
+@import "compass/css3";
+
+#search {
+	width: 97%;
+	background-color: #ffffff;
+	padding-top: 60px;
+	padding-left: 3%;
+
+	h2 {
+		color: #000000;
+		font-family: "ThinCopy";
+		font-weight: bold;
+		font-size: 67px;
+		padding-bottom: 60px;
+
+		@media screen and (max-width: 767px) {
+			font-size: 34px;
+		}
+	}
+
+	.post-entry {
+		p {
+			font-family: "ThinCopy";
+			font-size: 15px;
+			color: #000000;
+			width: 73%;
+			padding-top: 10px;
+			line-height: 170%;
+			padding-bottom: 35px;
+
+			@media screen and (max-width: 1023px) {
+				width: 97%;
+			}
+		}
+
+		h6 {
+			font-family: "BodyCopy";
+			font-size: 16px;
+			text-transform: uppercase;
+
+			a, a:hover, a:visited, a:link {
+				color: #b80221;
+				text-decoration: none;
+			}
+		}
+
+		p {
+			.read-more, .read-more:visited, .read-more:hover, .read-more:link {
+				font-family: "BoldHeadline";
+				font-size: 15px;
+				color: #202b75;
+				text-transform: uppercase;
+				text-decoration: none;
+			}
+		}
+	}
+}

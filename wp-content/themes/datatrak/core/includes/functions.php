@@ -115,4 +115,9 @@ function the_breadcrumb() {
     echo '</ul>';
 }
 
+function datatrak_new_excerpt_more( $more ) {
+    return '...<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('READ MORE', 'datatrak') . '</a>';
+}
+add_filter( 'excerpt_more', 'datatrak_new_excerpt_more' );
+
 ?>

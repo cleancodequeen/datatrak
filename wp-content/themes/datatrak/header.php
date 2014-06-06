@@ -36,21 +36,22 @@ if( !defined( 'ABSPATH' ) ) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<title>
-			<?php if (is_home()) { ?> Here is the homepage title  <?php  } else { wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); } ?>
+			<?php //if (is_home()) { ?><?php  //} else { wp_title('&laquo;', true, 'right'); ?> <?php //bloginfo('name'); } ?>
+			DATATRAK International : Clinical Trials Data Management Systems - www.datatrak.com	
 		</title>
 
 		<?php wp_head(); ?>
 	</head>
 
 <body <?php body_class(); ?>>
-	<div id="indicators">
+	<!-- <div id="indicators"> -->
         <!-- <p class="hr-show">Hires</p> -->
-        <p class="l-show">Large</p>
+        <!-- <p class="l-show">Large</p> -->
         <!-- <p class="d-show">Default</p> -->
-        <p class="tl-show">Tablet</p>
-        <p class="hl-show">Handheld</p>
+        <!-- <p class="tl-show">Tablet</p> -->
+        <!-- <p class="hl-show">Handheld</p> -->
         <!-- <p class="h-show">Handheld Portait</p> -->
-    </div>
+    <!-- </div> -->
 	<div id="container">
 		<div id="header" class="group">
 			<a href="<?php echo home_url(); ?>"><div id="logo">

@@ -1,0 +1,48 @@
+#search {
+  width: 97%;
+  background-color: #ffffff;
+  padding-top: 60px;
+  padding-left: 3%;
+}
+#search h2 {
+  color: #000000;
+  font-family: "ThinCopy";
+  font-weight: bold;
+  font-size: 67px;
+  padding-bottom: 60px;
+}
+@media screen and (max-width: 767px) {
+  #search h2 {
+    font-size: 34px;
+  }
+}
+#search .post-entry p {
+  font-family: "ThinCopy";
+  font-size: 15px;
+  color: #000000;
+  width: 73%;
+  padding-top: 10px;
+  line-height: 170%;
+  padding-bottom: 35px;
+}
+@media screen and (max-width: 1023px) {
+  #search .post-entry p {
+    width: 97%;
+  }
+}
+#search .post-entry h6 {
+  font-family: "BodyCopy";
+  font-size: 16px;
+  text-transform: uppercase;
+}
+#search .post-entry h6 a, #search .post-entry h6 a:hover, #search .post-entry h6 a:visited, #search .post-entry h6 a:link {
+  color: #b80221;
+  text-decoration: none;
+}
+#search .post-entry p .read-more, #search .post-entry p .read-more:visited, #search .post-entry p .read-more:hover, #search .post-entry p .read-more:link {
+  font-family: "BoldHeadline";
+  font-size: 15px;
+  color: #202b75;
+  text-transform: uppercase;
+  text-decoration: none;
+}

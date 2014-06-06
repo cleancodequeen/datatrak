@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Template Name: Blog
+ */
+
 // Exit if accessed directly
 if( !defined( 'ABSPATH' ) ) {
 	exit;
@@ -9,13 +13,13 @@ if( !defined( 'ABSPATH' ) ) {
  * Blog Category Template
  *
  *
- * @file           search.php
+ * @file           category-blog.php
  * @package        Datatrak
  * @author         Andrew Nida
  * @copyright      2014 Fig Company
  * @license        license.txt
  * @version        Release: 1.0
- * @filesource     wp-content/themes/datatrak/search.php
+ * @filesource     wp-content/themes/datatrak/category-blog.php
  * @since          available since Release 1.0
  */
 
@@ -23,10 +27,27 @@ get_header(); ?>
 
 <?php the_breadcrumb(); ?>
 
-<div id="content-search" class="">
+<div id="blog" class="category-content group">
 
-	blog stuff here!
+<?php if( have_posts() ) : ?>
+	<?php while( have_posts() ) : the_post(); ?>
+			<h2><?php the_title(); ?></h2>
+			<?php the_content(); ?>
 
-</div><!-- end of #content-search -->
+	<?php
+	endwhile; endif;
+	?>
+	<br>
+	<div class="posts">
+<?php 
+	query_posts('cat=blog');
+	
+	if ( have_posts() ) : while ( have_posts() ) : the_post();
+?> 
+	<?php the_title('<h6><a target="_blank" href="'.get_permalink().'">', '</a></h6>', true); ?>
+	<?php the_excerpt(); ?>
+<?php endwhile; endif; ?>
+	</div>
+</div><!-- end of #blog -->
 
 <?php get_footer(); ?>

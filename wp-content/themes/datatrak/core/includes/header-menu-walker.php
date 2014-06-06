@@ -118,7 +118,13 @@ class Footer_Site_Map extends Walker_Nav_Menu {
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-		$class_names = ' class="' . esc_attr( $class_names ) . '"';
+
+		if ( $depth == 0 ) {
+			$attributes .= ' class="' . esc_attr( 'main-cat' ) .'"';
+			$class_names = ' class="primary ' . esc_attr( $class_names ) . '"';
+		} else {
+			$class_names = ' class="' . esc_attr( $class_names ) . '"';
+		}
 
 		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
 

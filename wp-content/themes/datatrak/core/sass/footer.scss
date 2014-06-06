@@ -146,9 +146,9 @@ $footer-background-color: #252523;
 	background-color: $footer-background-color;
 
 	#sitemap {
-		@media screen and (min-width: 769px) {
+		@media screen and (min-width: 768px) {
 			@include column-count(4);
-			height: 300px;
+			height: 315px;
 			text-align: left;
 			padding-left: 8%;
 		}
@@ -164,6 +164,13 @@ $footer-background-color: #252523;
 		margin: 0 auto 0 auto;
 		padding-top: 83px;
 		margin-bottom: 40px;
+
+		#menu-footer-navigation-menu {
+			
+			@media screen and (min-width: 768px) {
+				height: 100%;
+			}
+		}
 
 		#menu-footer-navigation-menu li {
 			a, a:hover, a:visited, a:link {
@@ -181,31 +188,12 @@ $footer-background-color: #252523;
 				text-decoration: none;
 			}
 
-			@media screen and (min-width: 1024px) {
-				padding-top: 0px;
-			}
+			&.primary {
+				padding-top: 2px;
 
-			@media screen and (min-width: 768px) and (max-width: 1023px) {
-				padding-top: 1px;
-			}
-
-			@media screen and (min-width: 769px) {
-				&:nth-child(1) {
-					padding-bottom: 20px;
-				}
-
-				&:nth-child(4) {
-					padding-bottom: 55px;
-				}
-			}
-
-			@media screen and (max-width: 768px) {
-				&:nth-child(1) {
-					padding-bottom: 0px;
-				}
-
-				&:nth-child(4) {
-					padding-bottom: 0px;
+				@media screen and (min-width: 768px) {
+					height: 100%;
+					float: left;
 				}
 			}
 

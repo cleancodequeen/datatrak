@@ -23,12 +23,12 @@ get_header(); ?>
 
 <?php the_breadcrumb(); ?>
 
-<div id="content-search" class="">
-
+<div id="search" class="content group">
+	<h2>
 	<?php if( is_search() ) {
-		echo "this is a search";
+		echo __( 'Search Results', 'datatrak' );
 	} ?>
-
+	</h2>
 	<?php if( have_posts() ) : ?>
 
 
@@ -37,6 +37,7 @@ get_header(); ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 				<div class="post-entry">
+					<?php the_title('<h6><a target="_blank" href="'.get_permalink().'">', '</a></h6>', true); ?>
 					<?php the_excerpt(); ?>
 					<?php wp_link_pages( array( 'before' => '<div class="pagination">' . __( 'Pages:', 'responsive' ), 'after' => '</div>' ) ); ?>
 				</div>

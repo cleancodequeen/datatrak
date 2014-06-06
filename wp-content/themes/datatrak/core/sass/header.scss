@@ -19,7 +19,7 @@ $nav-text-hover: #ffffff;
 
 	#logo {
 		
-		@include background-image(image-url("datatrak-logo.svg"));
+		@include background-image(image-url("datatrak-logo.png"));
 		@include background-size(cover);
 
 		background: {
@@ -51,6 +51,8 @@ $nav-text-hover: #ffffff;
 		input {
 			display: inline;
 			float: left;
+			-webkit-appearance: none;
+    		border-radius: 0;
 		}
 
 		input#s    {
@@ -217,10 +219,6 @@ $nav-text-hover: #ffffff;
 				padding-top: 31px;
 				margin-left: 3.5%;
 				padding-bottom: 18px;
-
-				&:last-child {
-					padding-right: 20%;
-				}
 
 				a, a:visited, a:hover, a:link {
 					color: #d22448;
