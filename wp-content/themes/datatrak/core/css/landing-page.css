@@ -26,7 +26,7 @@
 }
 @media screen and (max-width: 767px) {
   #main-featured-widget .feature-me-link, #main-featured-widget .feature-me-link:active, #main-featured-widget .feature-me-link:hover, #main-featured-widget .feature-me-link:visited {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 #main-featured-widget .feature-me .widget-link {
@@ -71,7 +71,7 @@
   #main-featured-widget .feature-me .widget-link .link-title {
     padding-top: 22px;
     padding-left: 25px;
-    width: 82.5%;
+    width: 75%;
   }
 }
 #main-featured-widget .feature-me .widget-link .arrow {
@@ -214,19 +214,19 @@
 }
 
 #landing-widget .feature-me:nth-child(1) .widget .featured-icon {
-  background-image: url('../images/featured-icon-1.png?1401817026');
+  background-image: url('../images/featured-icon-1.png?1401496558');
 }
 
 #landing-widget .feature-me:nth-child(2) .widget .featured-icon {
-  background-image: url('../images/featured-icon-2.png?1401393895');
+  background-image: url('../images/featured-icon-2.png?1401817026');
 }
 
 #landing-widget .feature-me:nth-child(3) .widget .featured-icon {
-  background-image: url('../images/featured-icon-3.png?1401393895');
+  background-image: url('../images/featured-icon-3.png?1401496564');
 }
 
 #landing-widget .feature-me:nth-child(4) .widget .featured-icon {
-  background-image: url('../images/featured-icon-4.png?1401393895');
+  background-image: url('../images/featured-icon-4.png?1401817024');
 }
 
 #landing-widget .feature-me .widget {

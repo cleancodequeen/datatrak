@@ -52,17 +52,17 @@ $footer-background-color: #252523;
 					}
 				}
 
-				@media screen and (max-width: 1023px) {
+				@media screen and (min-width: 768px) and (max-width: 1023px) {
 				 	h5 {
 				 		font-size: 28px;
 				 	}
 				}
 
-				// @media screen and (max-width: 767px) {
-				// 	h5 {
-				// 		font-size: 28px;
-				// 	}
-				// }
+				 @media screen and (max-width: 767px) {
+				 	h5 {
+				 		font-size: 24px;
+				 	}
+				 }
 			}
 
 			.upw-more {
@@ -73,8 +73,12 @@ $footer-background-color: #252523;
 					top: 12px;
 				}
 
-				@media screen and (max-width: 1023px) {
+				@media screen and (min-width: 768px) and (max-width: 1023px) {
 					top: 8px;
+				}
+
+				@media screen and (max-width: 1023px) {
+					top: 4px;
 				}
 
 				a, a:hover, a:visited, a:link {
@@ -84,9 +88,15 @@ $footer-background-color: #252523;
 						font-size: 15px;
 					}
 
-					@media screen and (max-width: 1023px) {
+					@media screen and (min-width: 768px) and (max-width: 1023px) {
 						font-size: 13px;
 					}
+
+					@media screen and (max-width: 767px) {
+					 	h5 {
+					 		font-size: 11px;
+					 	}
+					 }
 					color: #b80221;
 					text-transform: uppercase;
 					text-decoration: none;
@@ -102,9 +112,13 @@ $footer-background-color: #252523;
 					padding-bottom: 72px;
 				}
 
-				@media screen and (max-width: 1023px) {
+				@media screen and (min-width: 768px) and (max-width: 1023px) {
 					margin-top: 24px;
 					padding-bottom: 64px;
+				}
+
+				@media screen and (max-width: 767px) {
+					margin-top: 18px;
 				}
 
 				li {

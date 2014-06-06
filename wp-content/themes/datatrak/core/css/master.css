@@ -772,9 +772,14 @@ html, body {
     font-size: 35px;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   #footer-widget .widget-area .widget-wrapper .widget-title h5 {
     font-size: 28px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #footer-widget .widget-area .widget-wrapper .widget-title h5 {
+    font-size: 24px;
   }
 }
 #footer-widget .widget-area .widget-wrapper .upw-more {
@@ -786,9 +791,14 @@ html, body {
     top: 12px;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   #footer-widget .widget-area .widget-wrapper .upw-more {
     top: 8px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #footer-widget .widget-area .widget-wrapper .upw-more {
+    top: 4px;
   }
 }
 #footer-widget .widget-area .widget-wrapper .upw-more a, #footer-widget .widget-area .widget-wrapper .upw-more a:hover, #footer-widget .widget-area .widget-wrapper .upw-more a:visited, #footer-widget .widget-area .widget-wrapper .upw-more a:link {
@@ -802,9 +812,14 @@ html, body {
     font-size: 15px;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   #footer-widget .widget-area .widget-wrapper .upw-more a, #footer-widget .widget-area .widget-wrapper .upw-more a:hover, #footer-widget .widget-area .widget-wrapper .upw-more a:visited, #footer-widget .widget-area .widget-wrapper .upw-more a:link {
     font-size: 13px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #footer-widget .widget-area .widget-wrapper .upw-more a h5, #footer-widget .widget-area .widget-wrapper .upw-more a:hover h5, #footer-widget .widget-area .widget-wrapper .upw-more a:visited h5, #footer-widget .widget-area .widget-wrapper .upw-more a:link h5 {
+    font-size: 11px;
   }
 }
 #footer-widget .widget-area .widget-wrapper ul {
@@ -817,10 +832,15 @@ html, body {
     padding-bottom: 72px;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   #footer-widget .widget-area .widget-wrapper ul {
     margin-top: 24px;
     padding-bottom: 64px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #footer-widget .widget-area .widget-wrapper ul {
+    margin-top: 18px;
   }
 }
 #footer-widget .widget-area .widget-wrapper ul li {
@@ -972,7 +992,7 @@ html, body {
 }
 @media screen and (max-width: 767px) {
   #main-featured-widget .feature-me-link, #main-featured-widget .feature-me-link:active, #main-featured-widget .feature-me-link:hover, #main-featured-widget .feature-me-link:visited {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 #main-featured-widget .feature-me .widget-link {
@@ -1017,7 +1037,7 @@ html, body {
   #main-featured-widget .feature-me .widget-link .link-title {
     padding-top: 22px;
     padding-left: 25px;
-    width: 82.5%;
+    width: 75%;
   }
 }
 #main-featured-widget .feature-me .widget-link .arrow {

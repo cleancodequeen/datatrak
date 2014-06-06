@@ -48,9 +48,14 @@
     font-size: 35px;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   #footer-widget .widget-area .widget-wrapper .widget-title h5 {
     font-size: 28px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #footer-widget .widget-area .widget-wrapper .widget-title h5 {
+    font-size: 24px;
   }
 }
 #footer-widget .widget-area .widget-wrapper .upw-more {
@@ -62,9 +67,14 @@
     top: 12px;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   #footer-widget .widget-area .widget-wrapper .upw-more {
     top: 8px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #footer-widget .widget-area .widget-wrapper .upw-more {
+    top: 4px;
   }
 }
 #footer-widget .widget-area .widget-wrapper .upw-more a, #footer-widget .widget-area .widget-wrapper .upw-more a:hover, #footer-widget .widget-area .widget-wrapper .upw-more a:visited, #footer-widget .widget-area .widget-wrapper .upw-more a:link {
@@ -78,9 +88,14 @@
     font-size: 15px;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   #footer-widget .widget-area .widget-wrapper .upw-more a, #footer-widget .widget-area .widget-wrapper .upw-more a:hover, #footer-widget .widget-area .widget-wrapper .upw-more a:visited, #footer-widget .widget-area .widget-wrapper .upw-more a:link {
     font-size: 13px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #footer-widget .widget-area .widget-wrapper .upw-more a h5, #footer-widget .widget-area .widget-wrapper .upw-more a:hover h5, #footer-widget .widget-area .widget-wrapper .upw-more a:visited h5, #footer-widget .widget-area .widget-wrapper .upw-more a:link h5 {
+    font-size: 11px;
   }
 }
 #footer-widget .widget-area .widget-wrapper ul {
@@ -93,10 +108,15 @@
     padding-bottom: 72px;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   #footer-widget .widget-area .widget-wrapper ul {
     margin-top: 24px;
     padding-bottom: 64px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #footer-widget .widget-area .widget-wrapper ul {
+    margin-top: 18px;
   }
 }
 #footer-widget .widget-area .widget-wrapper ul li {

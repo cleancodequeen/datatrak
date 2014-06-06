@@ -48,7 +48,7 @@ function datatrak_widgets_init() {
 						  'name'          => __( 'Landing Widget', 'datatrak' ),
 						  'description'   => __( 'Area 2 - Widget for links with icons featured on the landing page', 'datatrak' ),
 						  'id'            => 'landing-widget',
-						  'before_title'  => '<div class="featured-icon"></div><div class="landing-widget-title">',
+						  'before_title'  => '<div class="landing-widget-title">',
 						  'after_title'   => '</div>'
 					  ) );
 
