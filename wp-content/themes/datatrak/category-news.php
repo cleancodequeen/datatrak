@@ -32,19 +32,21 @@ get_header(); ?>
 <?php if( have_posts() ) : ?>
 	<?php while( have_posts() ) : the_post(); ?>
 			<h2><?php the_title(); ?></h2>
+			<?php the_content(); ?>
+
 	<?php
 	endwhile; endif;
 	?>
 	<br>
 	<div class="posts">
 <?php 
-	query_posts('category_name=news');
+	$posts = get_posts('category_name=news&numberposts=-1');
 	
-	if ( have_posts() ) : while ( have_posts() ) : the_post();
+	foreach($posts as $post) {
 ?> 
 	<?php the_title('<h6><a target="_blank" href="'.get_permalink().'">', '</a></h6>', true); ?>
 	<?php the_excerpt(); ?>
-<?php endwhile; endif; ?>
+<?php }; ?>
 	</div>
 </div><!-- end of #blog -->
 

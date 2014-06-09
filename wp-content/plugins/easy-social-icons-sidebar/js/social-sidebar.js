@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-	jQuery('table.cnss_sidebar-social-icon tr td img').hover(function() {
+	jQuery('table.socialsidebar-social-icon tr td img').hover(function() {
 		jQuery(this).animate({
 			opacity: 0.5
 			//marginTop:'-5px'

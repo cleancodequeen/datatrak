@@ -40,13 +40,13 @@ get_header(); ?>
 	<br>
 	<div class="posts">
 <?php 
-	query_posts('cat=blog');
+	$posts = get_posts('category_name=blog&numberposts=-1');
 	
-	if ( have_posts() ) : while ( have_posts() ) : the_post();
+	foreach($posts as $post) {
 ?> 
 	<?php the_title('<h6><a target="_blank" href="'.get_permalink().'">', '</a></h6>', true); ?>
 	<?php the_excerpt(); ?>
-<?php endwhile; endif; ?>
+<?php }; ?>
 	</div>
 </div><!-- end of #blog -->
 

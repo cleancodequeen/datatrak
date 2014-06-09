@@ -1249,7 +1249,6 @@ html, body {
   color: #be1832;
   font-family: "BodyCopy";
   text-decoration: none;
-  display: block;
 }
 #page .copy {
   padding-top: 56px;
@@ -1412,14 +1411,14 @@ html, body {
   padding-top: 45px;
   padding-bottom: 36px;
 }
-#page .sidebar .sidebar-social .cnss_sidebar-social-icon {
+#page .sidebar .sidebar-social .socialsidebar-social-icon {
   margin: 0 auto 0 auto !important;
 }
-#page .sidebar .sidebar-social .cnss_sidebar-social-icon tbody tr td {
+#page .sidebar .sidebar-social .socialsidebar-social-icon tbody tr td {
   padding-left: 12px !important;
 }
 @media screen and (max-width: 767px) {
-  #page .sidebar .sidebar-social .cnss_sidebar-social-icon tbody tr td {
+  #page .sidebar .sidebar-social .socialsidebar-social-icon tbody tr td {
     padding-left: 0 !important;
   }
 }

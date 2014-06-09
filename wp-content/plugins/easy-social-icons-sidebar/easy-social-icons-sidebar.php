@@ -2,7 +2,7 @@
 /*
 Plugin Name: Easy Social Icons Sidebar
 Plugin URI: http://www.cybernetikz.com
-Description: You can upload your own social icon, set your social URL, choose weather you want to display vertical or horizontal. You can use the shortcode <strong>[cn-social-icon]</strong> in page/post, template tag for php file <strong>&lt;?php if ( function_exists('cn_social__sidebar_icon') ) echo cn_social__sidebar_icon(); ?&gt;</strong> also you can use the widget <strong>"Easy Social Icons"</strong> for sidebar.
+Description: You can upload your own social icon, set your social URL, choose weather you want to display vertical or horizontal. You can use the shortcode <strong>[socialsidebar-social-icon]</strong> in page/post, template tag for php file <strong>&lt;?php if ( function_exists('ssb_social_icon') ) echo ssb_social_icon(); ?&gt;</strong> also you can use the widget <strong>"Easy Social Icons Sidebar"</strong> for sidebar.
 Version: 1.0
 Author: cybernetikz
 Author URI: http://www.cybernetikz.com
@@ -10,50 +10,50 @@ License: GPL2
 */
 
 $pluginsURI = plugins_url('/easy-social-icons-sidebar/');
-function cnss_sidebar_my_script() {
+function socialsidebar_my_script() {
 	global $pluginsURI;
 	wp_enqueue_script( 'jquery' );	
 	wp_enqueue_script('jquery-ui-sortable');
-	wp_register_script('cnss_sidebar_js', $pluginsURI . 'js/cnss_sidebar.js', array(), '1.0' );
-	wp_enqueue_script( 'cnss_sidebar_js' );	
+	wp_register_script('socialsidebar_js', $pluginsURI . 'js/social-sidebar.js', array(), '1.0' );
+	wp_enqueue_script( 'socialsidebar_js' );	
 	
-	wp_register_style('cnss_sidebar_css', $pluginsURI . 'css/cnss_sidebar.css', array(), '1.0' );
-	wp_enqueue_style( 'cnss_sidebar_css' );	
+	wp_register_style('socialsidebar_css', $pluginsURI . 'css/social-sidebar.css', array(), '1.0' );
+	wp_enqueue_style( 'socialsidebar_css' );	
 }
-add_action('init', 'cnss_sidebar_my_script');
-add_action('wp_ajax_update-social-icon-order', 'cnss_sidebar_save_ajax_order' );
-add_action('admin_menu', 'cnss_sidebar_add_menu_pages');
+add_action('init', 'socialsidebar_my_script');
+add_action('wp_ajax_update-social-icon-order', 'socialsidebar_save_ajax_order' );
+add_action('admin_menu', 'socialsidebar_add_menu_pages');
 
-function cnss_sidebar_add_menu_pages() {
-	add_menu_page('Easy Social Icon', 'Easy Social Icon', 'manage_options', 'cnss_sidebar_social_icon_page', 'cnss_sidebar_social_icon_page_fn',plugins_url('/images/scc-sc.png', __FILE__) );
+function socialsidebar_add_menu_pages() {
+	add_menu_page('Easy Social Icon Sidebar', 'Easy Social Icon Sidebar', 'manage_options', 'socialsidebar_social_icon_page', 'socialsidebar_social_icon_page_fn',plugins_url('/images/scc-sc.png', __FILE__) );
 	
-	add_submenu_page('cnss_sidebar_social_icon_page', 'Manage Icons', 'Manage Icons', 'manage_options', 'cnss_sidebar_social_icon_page', 'cnss_sidebar_social_icon_page_fn');
+	add_submenu_page('socialsidebar_social_icon_page', 'Manage Icons', 'Manage Icons', 'manage_options', 'socialsidebar_social_icon_page', 'socialsidebar_social_icon_page_fn');
 	
-	add_submenu_page('cnss_sidebar_social_icon_page', 'Add Icons', 'Add Icons', 'manage_options', 'cnss_sidebar_social_icon_add', 'cnss_sidebar_social_icon_add_fn');
+	add_submenu_page('socialsidebar_social_icon_page', 'Add Icons', 'Add Icons', 'manage_options', 'socialsidebar_social_icon_add', 'socialsidebar_social_icon_add_fn');
 	
-	add_submenu_page('cnss_sidebar_social_icon_page', 'Sort Icons', 'Sort Icons', 'manage_options', 'cnss_sidebar_social_icon_sort', 'cnss_sidebar_social_icon_sort_fn');
+	add_submenu_page('socialsidebar_social_icon_page', 'Sort Icons', 'Sort Icons', 'manage_options', 'socialsidebar_social_icon_sort', 'socialsidebar_social_icon_sort_fn');
 	
-	add_submenu_page('cnss_sidebar_social_icon_page', 'Options', 'Options', 'manage_options', 'cnss_sidebar_social_icon_option', 'cnss_sidebar_social_icon_option_fn');
+	add_submenu_page('socialsidebar_social_icon_page', 'Options', 'Options', 'manage_options', 'socialsidebar_social_icon_option', 'socialsidebar_social_icon_option_fn');
 	
-	add_action( 'admin_init', 'register_cnss_sidebar_settings' );
+	add_action( 'admin_init', 'register_socialsidebar_settings' );
 	
-}
-
-function register_cnss_sidebar_settings() {
-	register_setting( 'cnss_sidebar-settings-group', 'cnss_sidebar-width' );
-	register_setting( 'cnss_sidebar-settings-group', 'cnss_sidebar-height' );
-	register_setting( 'cnss_sidebar-settings-group', 'cnss_sidebar-margin' );
-	register_setting( 'cnss_sidebar-settings-group', 'cnss_sidebar-row-count' );
-	register_setting( 'cnss_sidebar-settings-group', 'cnss_sidebar-vertical-horizontal' );
 }
 
-function cnss_sidebar_social_icon_option_fn() {
+function register_socialsidebar_settings() {
+	register_setting( 'socialsidebar-settings-group', 'socialsidebar-width' );
+	register_setting( 'socialsidebar-settings-group', 'socialsidebar-height' );
+	register_setting( 'socialsidebar-settings-group', 'socialsidebar-margin' );
+	register_setting( 'socialsidebar-settings-group', 'socialsidebar-row-count' );
+	register_setting( 'socialsidebar-settings-group', 'socialsidebar-vertical-horizontal' );
+}
+
+function socialsidebar_social_icon_option_fn() {
 	
-	$cnss_sidebar_width = get_option('cnss_sidebar-width');
-	$cnss_sidebar_height = get_option('cnss_sidebar-height');
-	$cnss_sidebar_margin = get_option('cnss_sidebar-margin');
-	$cnss_sidebar_rows = get_option('cnss_sidebar-row-count');
-	$vorh = get_option('cnss_sidebar-vertical-horizontal');
+	$socialsidebar_width = get_option('socialsidebar-width');
+	$socialsidebar_height = get_option('socialsidebar-height');
+	$socialsidebar_margin = get_option('socialsidebar-margin');
+	$socialsidebar_rows = get_option('socialsidebar-row-count');
+	$vorh = get_option('socialsidebar-vertical-horizontal');
 	$vertical ='';
 	$horizontal ='';
 	if($vorh=='vertical') $vertical = 'checked="checked"';
@@ -62,31 +62,31 @@ function cnss_sidebar_social_icon_option_fn() {
 	<div class="wrap">
 	<h2>Social Icon Options</h2>
 	<form method="post" action="options.php">
-		<?php settings_fields( 'cnss_sidebar-settings-group' ); ?>
+		<?php settings_fields( 'socialsidebar-settings-group' ); ?>
 		<table class="form-table">
 			<tr valign="top">
 			<th scope="row">Icon Width</th>
-			<td><input type="text" name="cnss_sidebar-width" id="cnss_sidebar-width" class="small-text" value="<?php echo $cnss_sidebar_width?>" />px</td>
+			<td><input type="text" name="socialsidebar-width" id="socialsidebar-width" class="small-text" value="<?php echo $socialsidebar_width?>" />px</td>
 			</tr>
 			<tr valign="top">
 			<th scope="row">Icon Height</th>
-			<td><input type="text" name="cnss_sidebar-height" id="cnss_sidebar-height" class="small-text" value="<?php echo $cnss_sidebar_height?>" />px</td>
+			<td><input type="text" name="socialsidebar-height" id="socialsidebar-height" class="small-text" value="<?php echo $socialsidebar_height?>" />px</td>
 			</tr>
 			<tr valign="top">
 			<th scope="row">Icon Margin <em><small>(Gap between each icon)</small></em></th>
-			<td><input type="text" name="cnss_sidebar-margin" id="cnss_sidebar-margin" class="small-text" value="<?php echo $cnss_sidebar_margin?>" />px</td>
+			<td><input type="text" name="socialsidebar-margin" id="socialsidebar-margin" class="small-text" value="<?php echo $socialsidebar_margin?>" />px</td>
 			</tr>
 
 			<tr valign="top">
 			<th scope="row">Number of Rows</th>
-			<td><input type="text" name="cnss_sidebar-row-count" id="cnss_sidebar-row-count" class="small-text" value="<?php echo $cnss_sidebar_rows?>" /></td>
+			<td><input type="text" name="socialsidebar-row-count" id="socialsidebar-row-count" class="small-text" value="<?php echo $socialsidebar_rows?>" /></td>
 			</tr>
 			
 			<tr valign="top">
 			<th scope="row">Display Icon</th>
 			<td>
-				<input <?php echo $horizontal ?> type="radio" name="cnss_sidebar-vertical-horizontal" id="horizontal" value="horizontal" />&nbsp;<label for="horizontal">Horizontally</label><br />
-				<input <?php echo $vertical ?> type="radio" name="cnss_sidebar-vertical-horizontal" id="vertical" value="vertical" />&nbsp;<label for="vertical">Vertically</label></td>
+				<input <?php echo $horizontal ?> type="radio" name="socialsidebar-vertical-horizontal" id="horizontal" value="horizontal" />&nbsp;<label for="horizontal">Horizontally</label><br />
+				<input <?php echo $vertical ?> type="radio" name="socialsidebar-vertical-horizontal" id="vertical" value="vertical" />&nbsp;<label for="vertical">Vertically</label></td>
 			</tr>
 		</table>
 		
@@ -99,11 +99,11 @@ function cnss_sidebar_social_icon_option_fn() {
 }
 
 
-function cnss_sidebar_db_install () {
+function socialsidebar_db_install () {
    global $wpdb;
-   global $cnss_sidebar_db_version;
+   global $socialsidebar_db_version;
    
-	$srcdir   = ABSPATH.'wp-content/plugins/easy-social-icons/images/icon/';
+	$srcdir   = ABSPATH.'wp-content/plugins/easy-social-icons-sidebar/images/icon/';
 	$upload_dir = wp_upload_dir();
 	$targetdir = $upload_dir['basedir'].'/';
 	
@@ -115,7 +115,7 @@ function cnss_sidebar_db_install () {
 		copy($srcdir.$fname, $targetdir.$fname);
 	}
 
-   $table_name = $wpdb->prefix . "cn_social__sidebar_icon";
+   $table_name = $wpdb->prefix . "ssb_social_icon";
    if($wpdb->get_var("show tables like '$table_name'") != $table_name) {
       
 	$sql2 = "CREATE TABLE " . $table_name . " (
@@ -127,7 +127,7 @@ function cnss_sidebar_db_install () {
 	`date_upload` VARCHAR(100) NULL, 
 	`target` tinyint(1) NOT NULL DEFAULT '1',
 	PRIMARY KEY (`id`)) ENGINE = InnoDB;
-	INSERT INTO `wp_cn_social_sidebar_icon` (`id`, `title`, `url`, `image_url`, `sortorder`, `date_upload`, `target`) VALUES
+	INSERT INTO `wp_ssb_social_icon` (`id`, `title`, `url`, `image_url`, `sortorder`, `date_upload`, `target`) VALUES
 	(1, 'facebook', 'http://facebook.com/your-fan-page', '1368459524_facebook.png', 1, '1368459524', 1),
 	(2, 'twitter', 'http://twitter/username', '1368459556_twitter.png', 2, '1368459556', 1),
 	(3, 'flickr', 'http://flickr.com/?username', '1368459641_flicker.png', 3, '1368459641', 1),
@@ -137,23 +137,23 @@ function cnss_sidebar_db_install () {
 	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 	dbDelta($sql2);
 	
-	add_option( 'cnss_sidebar-width', '32');
-	add_option( 'cnss_sidebar-height', '32');
-	add_option( 'cnss_sidebar-margin', '4');
-	add_option( 'cnss_sidebar-row-count', '1');
-	add_option( 'cnss_sidebar-vertical-horizontal', 'horizontal');
+	add_option( 'socialsidebar-width', '32');
+	add_option( 'socialsidebar-height', '32');
+	add_option( 'socialsidebar-margin', '4');
+	add_option( 'socialsidebar-row-count', '1');
+	add_option( 'socialsidebar-vertical-horizontal', 'horizontal');
 	  
   }
 }
 
-register_activation_hook(__FILE__,'cnss_sidebar_db_install');
+register_activation_hook(__FILE__,'socialsidebar_db_install');
 
 if (isset($_GET['delete'])) {
 	
 	if ($_REQUEST['id'] != '')
 	{
 	
-		$table_name = $wpdb->prefix . "cn_social__sidebar_icon";
+		$table_name = $wpdb->prefix . "ssb_social_icon";
 		$image_file_path = "../wp-content/uploads/";
 		$sql = "SELECT * FROM ".$table_name." WHERE id =".$_REQUEST['id'];
 		$video_info = $wpdb->get_results($sql);
@@ -221,7 +221,7 @@ if (isset($_POST['submit_button'])) {
 		
 		if ($err == '')
 		{
-			$table_name = $wpdb->prefix . "cn_social__sidebar_icon";
+			$table_name = $wpdb->prefix . "ssb_social_icon";
 	
 			$insert = "INSERT INTO " . $table_name .
 			" (title, url, image_url, sortorder, date_upload, target) " .
@@ -252,7 +252,7 @@ if (isset($_POST['submit_button'])) {
 		$target = $_REQUEST['target'];
 		
 		$image_file_path = "../wp-content/uploads/";
-		$table_name = $wpdb->prefix . "cn_social__sidebar_icon";
+		$table_name = $wpdb->prefix . "ssb_social_icon";
 		$sql = "SELECT * FROM ".$table_name." WHERE id =".$_REQUEST['id'];
 		$video_info = $wpdb->get_results($sql);
 		$image_file_name = $video_info[0]->image_url;
@@ -304,7 +304,7 @@ if (isset($_POST['submit_button'])) {
 		" WHERE id=" . $_POST['id'];
 		if ($err == '')
 		{
-			$table_name = $wpdb->prefix . "cn_social__sidebar_icon";
+			$table_name = $wpdb->prefix . "ssb_social_icon";
 			$results3 = $wpdb->query( $update );
 			
 			if (!$results3){
@@ -321,14 +321,14 @@ if (isset($_POST['submit_button'])) {
 }
 
 
-function cnss_sidebar_social_icon_sort_fn() {
+function socialsidebar_social_icon_sort_fn() {
 	global $wpdb;
 	
-	$cnss_sidebar_width = get_option('cnss_sidebar-width');
-	$cnss_sidebar_height = get_option('cnss_sidebar-height');
+	$socialsidebar_width = get_option('socialsidebar-width');
+	$socialsidebar_height = get_option('socialsidebar-height');
 	
 	$image_file_path = "../wp-content/uploads/";
-	$table_name = $wpdb->prefix . "cn_social__sidebar_icon";
+	$table_name = $wpdb->prefix . "ssb_social_icon";
 	$sql = "SELECT * FROM ".$table_name." WHERE 1 ORDER BY sortorder";
 	$video_info = $wpdb->get_results($sql);
 
@@ -350,7 +350,7 @@ function cnss_sidebar_social_icon_sort_fn() {
 					<li id="item_<?php echo $vdoinfo->id ?>">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 					  <tr style="background:#f7f7f7">
-						<td width="60">&nbsp;<img src="<?php echo $image_file_path.$vdoinfo->image_url;?>" border="0" width="<?php echo $cnss_sidebar_width ?>" height="<?php echo $cnss_sidebar_height ?>" alt="<?php echo $vdoinfo->title;?>" /></td>
+						<td width="60">&nbsp;<img src="<?php echo $image_file_path.$vdoinfo->image_url;?>" border="0" width="<?php echo $socialsidebar_width ?>" height="<?php echo $socialsidebar_height ?>" alt="<?php echo $vdoinfo->title;?>" /></td>
 						<td><span><?php echo $vdoinfo->title;?></span></td>
 					  </tr>
 					</table>
@@ -389,10 +389,10 @@ function cnss_sidebar_social_icon_sort_fn() {
 <?php
 }
 
-function cnss_sidebar_save_ajax_order() 
+function socialsidebar_save_ajax_order() 
 {
 	global $wpdb;
-	$table_name = $wpdb->prefix . "cn_social__sidebar_icon";
+	$table_name = $wpdb->prefix . "ssb_social_icon";
 	parse_str($_POST['order'], $data);
 	if (is_array($data))
 	foreach($data as $key => $values ) 
@@ -410,7 +410,7 @@ function cnss_sidebar_save_ajax_order()
 }
 
 
-function cnss_sidebar_social_icon_add_fn() {
+function socialsidebar_social_icon_add_fn() {
 
 	global $err,$msg;
 
@@ -418,16 +418,16 @@ function cnss_sidebar_social_icon_add_fn() {
 		if ( $_REQUEST['mode'] != '' and $_REQUEST['mode'] == 'edit' and  $_REQUEST['id'] != '' )
 		{
 		
-			$cnss_sidebar_width = get_option('cnss_sidebar-width');
-			$cnss_sidebar_height = get_option('cnss_sidebar-height');
-			//$cnss_sidebar_margin = get_option('cnss_sidebar-margin');
+			$socialsidebar_width = get_option('socialsidebar-width');
+			$socialsidebar_height = get_option('socialsidebar-height');
+			//$socialsidebar_margin = get_option('socialsidebar-margin');
 	
 		
 			$page_title = 'Edit Icon';
 			$uptxt = 'Upload Icon';
 			
 			global $wpdb;
-			$table_name = $wpdb->prefix . "cn_social__sidebar_icon";
+			$table_name = $wpdb->prefix . "ssb_social_icon";
 			$image_file_path = "../wp-content/uploads/";
 			$sql = "SELECT * FROM ".$table_name." WHERE id =".$_REQUEST['id'];
 			$video_info = $wpdb->get_results($sql);
@@ -478,7 +478,7 @@ if($msg!='' or $err!='')
 			<th scope="row"><?php echo $uptxt;?></th>
 			<td>
 				<?php if (isset($_GET['mode'])) { ?>
-					<br /><img src="<?php echo $image_url?>" border="0" width="<?php echo $cnss_sidebar_width ?>"  height="<?php echo $cnss_sidebar_height ?>" alt="<?php echo $title?>" /><br />
+					<br /><img src="<?php echo $image_url?>" border="0" width="<?php echo $socialsidebar_width ?>"  height="<?php echo $socialsidebar_height ?>" alt="<?php echo $title?>" /><br />
 				<?php } ?>
 				<input type="file" name="image_file" id="image_file" value="" />
 			</td>
@@ -527,15 +527,15 @@ if($msg!='' or $err!='')
 <?php 
 } 
 
-function cnss_sidebar_social_icon_page_fn() {
+function socialsidebar_social_icon_page_fn() {
 	
 	global $wpdb;
 	
-	$cnss_sidebar_width = get_option('cnss_sidebar-width');
-	$cnss_sidebar_height = get_option('cnss_sidebar-height');
+	$socialsidebar_width = get_option('socialsidebar-width');
+	$socialsidebar_height = get_option('socialsidebar-height');
 	
 	$image_file_path = "../wp-content/uploads/";
-	$table_name = $wpdb->prefix . "cn_social__sidebar_icon";
+	$table_name = $wpdb->prefix . "ssb_social_icon";
 	$sql = "SELECT * FROM ".$table_name." WHERE 1 ORDER BY sortorder";
 	$video_info = $wpdb->get_results($sql);
 	?>
@@ -585,14 +585,14 @@ function cnss_sidebar_social_icon_page_fn() {
 				</td>
 				
 				<td>
-					<img src="<?php echo $image_file_path.$vdoinfo->image_url;?>" border="0" width="<?php echo $cnss_sidebar_width ?>" height="<?php echo $cnss_sidebar_height ?>" alt="<?php echo $vdoinfo->title;?>" />
+					<img src="<?php echo $image_file_path.$vdoinfo->image_url;?>" border="0" width="<?php echo $socialsidebar_width ?>" height="<?php echo $socialsidebar_height ?>" alt="<?php echo $vdoinfo->title;?>" />
 				</td>
 	
 				<td>
 					<?php echo $vdoinfo->sortorder;?>
 				</td>
 				<td>
-					<a href="?page=cnss_sidebar_social_icon_add&mode=edit&id=<?php echo $vdoinfo->id;?>"><strong>Edit</strong></a>
+					<a href="?page=socialsidebar_social_icon_add&mode=edit&id=<?php echo $vdoinfo->id;?>"><strong>Edit</strong></a>
 				</td>
 				<td>
 					<a onclick="show_confirm('<?php echo $vdoinfo->title?>','<?php echo $vdoinfo->id;?>');" href="#delete"><strong>Delete</strong></a>
@@ -617,36 +617,36 @@ function cnss_sidebar_social_icon_page_fn() {
 	<?php
 }
 
-function cn_social_sidebar_icon() {
+function ssb_social_icon() {
 
-	$cnss_sidebar_width = get_option('cnss_sidebar-width');
-	$cnss_sidebar_height = get_option('cnss_sidebar-height');
-	$cnss_sidebar_margin = get_option('cnss_sidebar-margin');
-	$cnss_sidebar_rows = get_option('cnss_sidebar-row-count');
-	$vorh = get_option('cnss_sidebar-vertical-horizontal');
+	$socialsidebar_width = get_option('socialsidebar-width');
+	$socialsidebar_height = get_option('socialsidebar-height');
+	$socialsidebar_margin = get_option('socialsidebar-margin');
+	$socialsidebar_rows = get_option('socialsidebar-row-count');
+	$vorh = get_option('socialsidebar-vertical-horizontal');
 
 	$upload_dir = wp_upload_dir(); 
 	global $wpdb;
-	$table_name = $wpdb->prefix . "cn_social__sidebar_icon";
+	$table_name = $wpdb->prefix . "ssb_social_icon";
 	$image_file_path = $upload_dir['baseurl'];
 	$sql = "SELECT * FROM ".$table_name." WHERE image_url<>'' AND url<>'' ORDER BY sortorder";
 	$video_info = $wpdb->get_results($sql);
 	$icon_count = count($video_info);
 	
 	$_collectionSize = count($video_info);
-	$_rowCount = $cnss_sidebar_rows ? $cnss_sidebar_rows : 1;
+	$_rowCount = $socialsidebar_rows ? $socialsidebar_rows : 1;
 	$_columnCount = ceil($_collectionSize/$_rowCount);
 	
 	if($vorh=='vertical')
-		$table_width = $cnss_sidebar_width;
+		$table_width = $socialsidebar_width;
 	else
-		$table_width = $_columnCount*($cnss_sidebar_width+$cnss_sidebar_margin);
-		//$table_width = $icon_count*($cnss_sidebar_width+$cnss_sidebar_margin);
+		$table_width = $_columnCount*($socialsidebar_width+$socialsidebar_margin);
+		//$table_width = $icon_count*($socialsidebar_width+$socialsidebar_margin);
 	
-	$td_width = $cnss_sidebar_width+$cnss_sidebar_margin;
+	$td_width = $socialsidebar_width+$socialsidebar_margin;
 		
 	ob_start();
-	echo '<table class="cnss_sidebar-social-icon" style="width:'.$table_width.'px" border="0" cellspacing="0" cellpadding="0">';
+	echo '<table class="socialsidebar-social-icon" style="width:'.$table_width.'px" border="0" cellspacing="0" cellpadding="0">';
 	//echo $vorh=='horizontal'?'<tr>':'';
 	$i=0;
 	foreach($video_info as $icon)
@@ -654,7 +654,7 @@ function cn_social_sidebar_icon() {
 	$image_url = $image_file_path.'/'.$icon->image_url;
 	echo $vorh=='vertical'?'<tr>':'';
 	if($i++%$_columnCount==0 && $vorh!='vertical' )echo '<tr>';
-	?><td style="width:<?php echo $td_width ?>px"><a <?php echo ($icon->target==1)?'target="_blank"':'' ?> title="<?php echo $icon->title ?>" href="<?php echo $icon->url ?>"><img src="<?php echo $image_url?>" border="0" width="<?php echo $cnss_sidebar_width ?>" height="<?php echo $cnss_sidebar_height ?>" alt="<?php echo $icon->title ?>" /></a></td><?php 
+	?><td style="width:<?php echo $td_width ?>px"><a <?php echo ($icon->target==1)?'target="_blank"':'' ?> title="<?php echo $icon->title ?>" href="<?php echo $icon->url ?>"><img src="<?php echo $image_url?>" border="0" width="<?php echo $socialsidebar_width ?>" height="<?php echo $socialsidebar_height ?>" alt="<?php echo $icon->title ?>" /></a></td><?php 
 	if ( ($i%$_columnCount==0 || $i==$_collectionSize) && $vorh!='vertical' )echo '</tr>';
 	echo $vorh=='vertical'?'</tr>':'';
 	//$i++;
@@ -666,13 +666,13 @@ function cn_social_sidebar_icon() {
 	return $out;
 }
 
-class cnss_sidebar_Widget extends WP_Widget {
+class socialsidebar_Widget extends WP_Widget {
 
 	public function __construct() {
 		parent::__construct(
-	 		'cnss_sidebar_widget', // Base ID
-			'Easy Social Icon', // Name
-			array( 'description' => __( 'Easy Social Icon Widget for sidebar' ) ) // Args
+	 		'socialsidebar_widget', // Base ID
+			'Easy Social Icon Sidebar', // Name
+			array( 'description' => __( 'Easy Social Icon Sidebar Widget for sidebar' ) ) // Args
 		);
 	}
 
@@ -683,7 +683,7 @@ class cnss_sidebar_Widget extends WP_Widget {
 		echo $before_widget;
 		if ( ! empty( $title ) )
 			echo $before_title . $title . $after_title;
-		echo cn_social__sidebar_icon();
+		echo ssb_social_icon();
 		echo $after_widget;
 	}
 
@@ -708,7 +708,7 @@ class cnss_sidebar_Widget extends WP_Widget {
 		<?php 
 	}
 
-} // class cnss_sidebar_Widget
-add_action( 'widgets_init', create_function( '', 'register_widget( "cnss_sidebar_Widget" );' ) );
+} // class socialsidebar_Widget
+add_action( 'widgets_init', create_function( '', 'register_widget( "socialsidebar_Widget" );' ) );
 
-add_shortcode('cn-social-icon', 'cn_social__sidebar_icon');
+add_shortcode('ssb-social-icon', 'ssb_social_icon');

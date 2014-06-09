@@ -12,7 +12,7 @@ You can upload your own social icon, set your social URL, choose weather you wan
 
 <strong>If you need paid support to get this plugin installed or to have a customized version of the plugin please send us an email to this address <a href="mailto:contact@cybernetikz.com">contact@cybernetikz.com</a></strong>.
 
-You can upload your own social icon, set your social URL, choose weather you want to display vertical or horizontal. You can use the shortcode <strong>[cn-social-icon]</strong> in page/post, template tag for php file <strong><?php if ( function_exists('cn_social__sidebar_icon') ) echo cn_social__sidebar_icon(); ?></strong> also you can use the widget <strong>"Easy Social Icons"</strong> for sidebar.
+You can upload your own social icon, set your social URL, choose weather you want to display vertical or horizontal. You can use the shortcode <strong>[cn-social-icon]</strong> in page/post, template tag for php file <strong><?php if ( function_exists('cn_social_icon') ) echo cn_social_icon(); ?></strong> also you can use the widget <strong>"Easy Social Icons"</strong> for sidebar.
 
 = Key Feature =
 
@@ -40,7 +40,7 @@ Please visit our site <a target="_blank" href="http://www.cybernetikz.com/blog/w
 
 = Ques : How use this plugins? =
 Ans : 
-Use this shortcode for page/post <strong>[cn-social-icon]</strong> , for php code use this template tag <strong>&lt;?php if ( function_exists('cn_social__sidebar_icon') ) echo cn_social__sidebar_icon(); ?&gt;</strong>
+Use this shortcode for page/post <strong>[cn-social-icon]</strong> , for php code use this template tag <strong>&lt;?php if ( function_exists('cn_social_icon') ) echo cn_social_icon(); ?&gt;</strong>
 
 Also you can use the widget for the sidebar.
 

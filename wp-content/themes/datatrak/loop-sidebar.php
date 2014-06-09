@@ -22,12 +22,12 @@ if( !defined( 'ABSPATH' ) ) {
 ?>
 <div class="sidebar">
 	<?php 
-		if ( function_exists('cn_social_sidebar_icon') ) {
+		if ( function_exists('ssb_social_icon') ) {
 
 		?>
 	<div class="sidebar-social">
 	<?php
-			echo cn_social_sidebar_icon();
+			echo ssb_social_icon();
 		} 
 	?>
 	</div>
